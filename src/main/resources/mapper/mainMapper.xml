@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.base.app.mapper.MainMapper">
+
+<select id="maxNum" resultType="int">
+	select nvl(max(num),0) from board
+</select>
+
+
+</mapper>
