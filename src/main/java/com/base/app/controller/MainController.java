@@ -20,7 +20,7 @@ public class MainController {
 	public ModelAndView main() throws Exception{
 		ModelAndView mav = new ModelAndView();
 		System.out.println("ttttt");
-		mav.setViewName("main/header"); //jsp(html)로 갈때는 setViewName // class로 갈때는 setView
+		mav.setViewName("main/main"); //jsp(html)로 갈때는 setViewName // class로 갈때는 setView
 		return mav;
 	}
 }
