@@ -34,7 +34,12 @@ dependencies {
 	// JASPER
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 
+	//DB
 	implementation 'org.postgresql:postgresql'
+
+	//JSON
+	implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+	implementation group: 'org.json', name: 'json', version: '20231013'
 
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'

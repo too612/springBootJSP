@@ -7,9 +7,45 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>HTML !DOCTYPE declaration</title>
 </head>
+<script>
+    var domainName = "http://localhost:8080";
+
+    $(function() {
+			
+        // 취합
+        $('#test').click(function(){
+            var test = fn_callTest();
+            alert("결과값->" + test);
+        });
+    });
+
+    /*
+    * Function Name : fn_callTest
+    * Description   : 검토의견 가져오기
+    * param		 : N/A
+    */
+function fn_callTest(){
+    return $.ajax({
+            type		: "POST",
+            url			: domainName+"/main/call.do",
+            data		: {
+                            PRJ_NO : '1'
+                            },
+            dataType	: "JSON", 
+            async 		: false,
+            success		: function(data) {
+                            $.each(data, function() {
+                            })
+                            },
+            error		: function(request, status, error) {
+                            //alert("error==>" + status);
+                            }
+    }).responseText;
+}
+</script>
 <body>
 
-    <p>이 문서는 HTML 문서입니다.</p>
+    <button id="test">111</button>
 
 </body>
 </html>
