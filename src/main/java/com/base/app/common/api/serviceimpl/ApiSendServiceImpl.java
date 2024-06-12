@@ -26,8 +26,6 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
 import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.base.app.common.api.service.ApiSendService;
@@ -54,7 +52,7 @@ import jakarta.servlet.http.HttpServletRequest;
 @Service("common.api.service.ApiSendService")
 public class ApiSendServiceImpl implements ApiSendService{
 	
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	//private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	/**
 	 * API 요청

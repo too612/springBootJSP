@@ -25,5 +25,5 @@ public interface ApiReceiveService {
 	
 	public String ReceiveApiJSON(HttpServletRequest param) throws Exception;
 	public Map<String, Object> ReceiveApiMap(String JSON) throws Exception;
-	public List ReceiveApiList(String JSON) throws Exception;
+	public List<Map<String, Object>> ReceiveApiList(String JSON) throws Exception;
 }

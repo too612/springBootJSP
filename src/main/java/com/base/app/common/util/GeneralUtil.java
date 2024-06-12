@@ -1,16 +1,9 @@
 package com.base.app.common.util;
 
-import java.io.File;
-import java.math.BigDecimal;
-import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 
 
@@ -79,7 +72,7 @@ public class GeneralUtil {
 	 * @param var
 	 * @author 문덕찬
 	 */
-	public static void nullToValue(Map map, String str, String var) {
+	public static void nullToValue(Map<String, Object> map, String str, String var) {
 		if (map.get(str) == null) {
 			map.put(str, var);
 		}

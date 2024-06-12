@@ -12,8 +12,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.base.app.common.api.service.ApiReceiveService;
@@ -42,7 +40,7 @@ import jakarta.servlet.http.HttpServletRequest;
 @Service("common.api.service.ApiReceiveService")
 public class ApiReceiveServiceImpl implements ApiReceiveService{
 	
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	//private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 	
 	/**
 	 * API 요청이 들어올 경우 결과값 반환
@@ -60,7 +58,7 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 		JSONParser jsonParser = new JSONParser();
 		JSONObject jObject = (JSONObject) jsonParser.parse(str);
 		
-		List list = null;
+		List<Map<String, Object>> list = null;
 		
 		JSONObject headData = new JSONObject();
 		JSONObject bodyData = new JSONObject();
@@ -203,12 +201,12 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 	 * @param HttpServletRequest param : parameter
 	 * @return String
 	 */
-	public List ReceiveApiList(String JSON) throws ParseException {
+	public List<Map<String, Object>> ReceiveApiList(String JSON) throws ParseException {
 		
 		JSONParser jsonParser = new JSONParser();
 		JSONObject jsonObj = (JSONObject) jsonParser.parse(JSON);
 		JSONObject body = (JSONObject) jsonObj.get("body");
-		List list = null;
+		List<Map<String, Object>> list = null;
 		
 		int totalCnt = Integer.valueOf(String.valueOf(body.get("count")));
 		
@@ -217,7 +215,7 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 		list = separateListFrmJSONArrayToList(jsonArray);
 		
 		for (int i = 0; i < totalCnt; i++) {
-			Map map = new HashMap();
+			Map<String, Object> map = new HashMap<String,Object>();
 			
 			JSONObject dataObj = (JSONObject) jsonArray.get(i);
 			
@@ -233,7 +231,7 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 	 * @return
 	 * @throws Exception
 	 */
-	private List separateListFrmJSONArrayToList (JSONArray jSongArray) throws ParseException{
+	private List<Map<String, Object>> separateListFrmJSONArrayToList (JSONArray jSongArray) throws ParseException{
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		
 		for(int i = 0; i < jSongArray.size(); i++){   //가져온 hashmap 데이터의 갯수만큼 반복
