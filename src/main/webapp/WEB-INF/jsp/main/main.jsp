@@ -17,6 +17,11 @@
             var test = fn_callTest();
             alert("결과값->" + test);
         });
+        // api
+        $('#call').click(function(){
+            var test = fn_callAPI();
+            alert("결과값->" + test);
+        });
     });
 
     /*
@@ -42,10 +47,35 @@ function fn_callTest(){
                             }
     }).responseText;
 }
+
+
+    /*
+    * Function Name : fn_callAPI
+    * Description   : api
+    * param		 : N/A
+    */
+    function fn_callAPI(){
+    return $.ajax({
+            type		: "POST",
+            url			: domainName+"/common/api/ApiSend/sendApiList.do",
+            data		: {
+                            PRJ_NO : '1'
+                            },
+            dataType	: "JSON", 
+            async 		: false,
+            success		: function(data) {
+                            $.each(data, function() {
+                            })
+                            },
+            error		: function(request, status, error) {
+                            //alert("error==>" + status);
+                            }
+    }).responseText;
+}
 </script>
 <body>
 
     <button id="test">111</button>
-
+    <button id="call">call</button>
 </body>
 </html>

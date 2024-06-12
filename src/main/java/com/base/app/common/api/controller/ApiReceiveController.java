@@ -39,7 +39,7 @@ public class ApiReceiveController {
 	 * @param HttpServletRequest param : parameter
 	 * @return String
 	 */
-	@RequestMapping(value="/mis/pur/purReceiveAPI/ReceiveApiJSON.do")
+	@RequestMapping(value="/common/api/ApiReceive/ReceiveApiJSON.do")
 	@ResponseBody
 	public String ReceiveApiJSON(HttpServletRequest param) throws Exception{ 
 		

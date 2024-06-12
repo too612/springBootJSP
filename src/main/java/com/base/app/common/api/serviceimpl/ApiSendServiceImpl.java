@@ -51,7 +51,7 @@ import jakarta.servlet.http.HttpServletRequest;
  *  ----------  --------  ---------------------------
  *  2024.05.27   김성호          최초 생성
  */
-@Service("common.api.service.ApiSendServiceImpl")
+@Service("common.api.service.ApiSendService")
 public class ApiSendServiceImpl implements ApiSendService{
 	
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
@@ -67,9 +67,9 @@ public class ApiSendServiceImpl implements ApiSendService{
 		HashMap<String, Object> searchMap = convertMap(param);
 		
 		// 호출해야 하는 API 주소 작성(데이터가 JSON형식으로 RETURN 해주는 URL 정보를 작성)
-		String serverURL = "http:// 210.110.132.86:48080/API/";
+		String serverURL = "http://localhost:8080/";
 		String httpType = "http";
-		String rUrl = String.valueOf(searchMap.get("SCH_API_TYPE"));
+		String rUrl = "common/api/ApiReceive/ReceiveApiJSON.do";
 		
 		Map<String, Object> rSearchMap = searchMap;
 		String rJSON = "";
