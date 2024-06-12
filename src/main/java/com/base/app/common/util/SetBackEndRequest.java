@@ -11,7 +11,6 @@ import java.util.Collections;
 public class SetBackEndRequest extends HttpServletRequestWrapper {
     HashMap<String, Object> params;
 
-    @SuppressWarnings("unchecked")
     public SetBackEndRequest(HttpServletRequest request) {
         super(request);
         this.params = new HashMap<String, Object>(request.getParameterMap());
@@ -25,13 +24,11 @@ public class SetBackEndRequest extends HttpServletRequestWrapper {
         }
         return returnValue;
     }
-
-    @SuppressWarnings("unchecked")
+    
     public Map getParameterMap() {
         return Collections.unmodifiableMap(params);
     }
 
-    @SuppressWarnings("unchecked")
     public Enumeration getParameterNames() {
         return Collections.enumeration(params.keySet());
     }

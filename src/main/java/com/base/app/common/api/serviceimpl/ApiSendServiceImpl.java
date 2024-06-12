@@ -96,18 +96,18 @@ public class ApiSendServiceImpl implements ApiSendService{
 			if (Files.notExists(path)) {
 				throw new IllegalArgumentException("File is not exists!");
 			}
-			try {
-				// byte로 변경
-				byte[] bytes = Files.readAllBytes(path);
+			// try {
+			// 	// byte로 변경
+			// 	byte[] bytes = Files.readAllBytes(path);
 				
-				// byte->base64로 변경 후 String 저장
-				//String s = new String(Base64.encodeBase64(bytes));
-				// byte 데이터 세팅
-				//rSearchMap.put("FILE_BLOB", s);
+			// 	// byte->base64로 변경 후 String 저장
+			// 	//String s = new String(Base64.encodeBase64(bytes));
+			// 	// byte 데이터 세팅
+			// 	//rSearchMap.put("FILE_BLOB", s);
 				
-			}catch (IOException e) {
-				e.printStackTrace();
-			}
+			// }catch (IOException e) {
+			// 	e.printStackTrace();
+			// }
 		}
 		
 		rJSON = getHttpCallMethod(serverURL+rUrl, httpType, "POST", rSearchMap); 
@@ -306,7 +306,6 @@ public class ApiSendServiceImpl implements ApiSendService{
 				return null;
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			conn.disconnect(); //연결 해제
