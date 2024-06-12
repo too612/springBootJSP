@@ -1,6 +1,5 @@
 package com.base.app.common.api.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -9,6 +8,7 @@ import com.base.app.common.api.service.ApiSendService;
 import com.base.app.common.util.SetBackEndRequest;
 
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.RequiredArgsConstructor;
 
 /**
  * @Class Name  : ApiSendController.java
@@ -26,14 +26,10 @@ import jakarta.servlet.http.HttpServletRequest;
  *  2024.05.27   김성호          최초 생성
  */
 @Controller
+@RequiredArgsConstructor
 public class ApiSendController {
 
 	private final ApiSendService apiSendService;
-
-    @Autowired
-    public ApiSendController(ApiSendService apiSendService) {
-        this.apiSendService = apiSendService;
-	}
 
 	/**
 	 * API 요청

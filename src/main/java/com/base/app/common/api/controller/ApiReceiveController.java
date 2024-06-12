@@ -1,6 +1,5 @@
 package com.base.app.common.api.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -8,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.base.app.common.api.service.ApiReceiveService;
 
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.RequiredArgsConstructor;
 
 /**
  * @Class Name  : ApiReceiveController.java
@@ -25,15 +25,11 @@ import jakarta.servlet.http.HttpServletRequest;
  *  2024.05.27   김성호          최초 생성
  */
 @Controller
+@RequiredArgsConstructor
 public class ApiReceiveController {
 
 	private final ApiReceiveService apiReceiveService;
 
-    @Autowired
-    public ApiReceiveController(ApiReceiveService apiReceiveService) {
-        this.apiReceiveService = apiReceiveService;
-	}
-	
 	/**
 	 * API 요청이 들어올 경우 결과값 반환
 	 * @param HttpServletRequest param : parameter
