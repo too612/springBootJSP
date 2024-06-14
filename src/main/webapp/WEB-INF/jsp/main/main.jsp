@@ -74,7 +74,30 @@ function fn_callTest(){
 }
 </script>
 <body>
+    <nav class="navbar">
 
+        <div class="navbar__logo">
+          <i class="fas fa-blog"></i>
+          <a href="">AXCE Coding</a>
+        </div>
+  
+        <ul class="navbar__menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Weddings</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Bookings</a></li>
+        </ul>
+  
+        <ul class="navbar__icons">
+          <li><i class="fab fa-google"></i></li>
+          <li><i class="fab fa-slack"></i></li>
+        </ul>
+        
+        <a href="#" class="navbar__toggleBtn">
+            <i class="fas fa-hamburger"></i>
+          </a>
+        </nav>
     <button id="test">111</button>
     <button id="call">call</button>
 </body>
