@@ -74,31 +74,49 @@ function fn_callTest(){
 }
 </script>
 <body>
-    <nav class="navbar">
-
-        <div class="navbar__logo">
-          <i class="fas fa-blog"></i>
-          <a href="">AXCE Coding</a>
-        </div>
-  
-        <ul class="navbar__menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Weddings</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Bookings</a></li>
-        </ul>
-  
-        <ul class="navbar__icons">
-          <li><i class="fab fa-google"></i></li>
-          <li><i class="fab fa-slack"></i></li>
-        </ul>
-        
-        <a href="#" class="navbar__toggleBtn">
-            <i class="fas fa-hamburger"></i>
-          </a>
+    <!-- 페이지 소개, 검색, 제목 로고 등-->
+    <header>
+        <!-- 네비게이션바는 주로 header 안에 구성한다.-->
+        <nav class="navbar">
+            <div class="navbar__logo">
+              <i class="fas fa-blog"></i>
+              <a href="">AXCE Coding</a>
+            </div>
+      
+            <ul class="navbar__menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Weddings</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Bookings</a></li>
+            </ul>
+      
+            <ul class="navbar__icons">
+              <li><i class="fab fa-google"></i></li>
+              <li><i class="fab fa-slack"></i></li>
+            </ul>
+            
+            <a href="#" class="navbar__toggleBtn">
+                <i class="fas fa-hamburger"></i>
+              </a>
         </nav>
-    <button id="test">111</button>
-    <button id="call">call</button>
+    </header>
+    <!-- body의 핵심내용, 핵심주제 / 확장하는 콘텐츠 -->
+    <main>
+        <button id="test">111</button>
+        <button id="call">call</button>
+    </main>
+    <!-- 문서의 독립적인 구획 -->
+    <section>
+        <!-- 문서, 페이지 안에 독립적 구획-->
+        <article></article>
+        <article></article>
+    </section>
+    <!-- 문서에 간접적 관련있는 컨텐츠들 -->
+    <aside>
+    </aside>
+    <!-- 가장 아래, 작성자, 저작권 정보 등-->
+    <footer>
+    </footer>
 </body>
 </html>
