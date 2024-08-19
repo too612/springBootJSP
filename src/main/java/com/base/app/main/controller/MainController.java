@@ -304,5 +304,14 @@ public class MainController {
 		return mav;
  
 	}
+
+	@RequestMapping(value = "/board.action",  method = {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView board(HttpServletRequest request) throws Exception{ 
+		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("board/sidebar_v1");
+
+		return mav;
+	}
 		
 }

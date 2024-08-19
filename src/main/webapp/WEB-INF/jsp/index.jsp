@@ -12,6 +12,8 @@
 
 <h3>
 <a href="<%=cp %>/list.action">게시판</a>
+<a href="<%=cp %>/board.action">게시판2</a>
+
 </h3>
 
 </body>
