@@ -1,105 +1,49 @@
-:root {
-    --text-color: #f0f4f5;
-    --background-color: #263343;
-    --accent-color: orange;
-    --icons-color: rgb(152, 187, 201);
-    --bodybackground-color: lightgray;
+﻿@CHARSET "UTF-8";
+
+* {
+	margin:0px;
+	padding:0px;
 }
 
-body { 
-    margin: 0;
-    background-color: var(--bodybackground-color);
-    font-family: 'STIX Two Math';
+body {	
+	font-size: 9pt;
+	font-family:굴림;
 }
 
+/* 하이퍼링크 css */
 a {
-    text-decoration: none;
-    color: var(--text-color);
+	cursor: hand;
+	color: #000000;
+	text-decoration: none;
+	font-size: 9pt;
+	line-height: 150%;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--background-color);
-    padding: 8px 12px;
-    font-family: 'STIX Two Math';
+a:hover, a:active {
+	font-size: 9pt;
+	color: #F28011;
+	text-decoration: underline;
 }
 
-.navbar__logo i {
-    color: var(--accent-color);
-    padding-left: 0;
+ul {
+	list-style: none;
 }
 
-.navbar__menu {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding-left: 0;
+td {font-size: 9pt;}
+
+.btn1 {
+	font-size: 9pt; 
+	color:rgb(0,0,0); 
+	background-color:rgb(245,245,245); 
+	line-height:16px;
 }
 
-.navbar__menu li {
-    padding: 8px 30px;
-}
-
-.navbar__icons {
-    list-style: none;
-    display: flex;
-    color: var(--icons-color);
-    margin: 0;
-    padding-left: 0;
-    padding: 8px 12px;
-}
-
-.navbar__icons li {
-    padding: 8px 12px;
-    margin: 0;
-}
-
-.navbar__menu li:hover {
-    background-color: var(--accent-color);
-    border-radius: 3px;
-}
-
-.navbar__toggleBtn {
-    color: var(--accent-color);
-    position: absolute;
-    right: 15px;
-    font-size: 20px;
-    display: none;
-}
-
-@media screen and (max-width: 700px) {
-    .navbar__menu.active,
-    .navbar__icons.active {
-        display: flex;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 0;
-    }
-
-    .navbar__menu {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .navbar__menu li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .navbar__icons {
-        display: none;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .navbar__toggleBtn {
-        display: block;
-    }
+.btn2 {   
+	color:#000000;
+	font: normal 9pt '굴림','trebuchet ms',helvetica,sans-serif;
+	background-color:#E4E4E4;
+	border:1px solid;
+	border-color: #696 #363 #363 #696;
+	line-height:16px;	
+	padding:1px 6px 1px 6px;
 }

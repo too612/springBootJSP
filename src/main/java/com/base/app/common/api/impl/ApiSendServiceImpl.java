@@ -1,4 +1,4 @@
-package com.base.app.common.api.serviceimpl;
+package com.base.app.common.api.impl;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
