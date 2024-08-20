@@ -11,8 +11,7 @@
 <body>
 
 <h3>
-<a href="<%=cp %>/list.action">게시판</a>
-<a href="<%=cp %>/board.action">포털</a>
+error
 
 </h3>
 

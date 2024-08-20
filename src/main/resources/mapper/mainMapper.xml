@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select COALESCE(max(num),0) from board
 </select>
 
-<insert id="insertData" parameterType="com.base.app.main.dto.MainDTO">
+<insert id="insertData" parameterType="MainDTO">
 	insert into board (num,name,pwd,email,subject,content,ipAddr,
 	hitCount,created) values (#{num},#{name},#{pwd},#{email},#{subject},
 	#{content},#{ipAddr},0,now())
@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	where ${searchKey} like '%' || #{searchValue} || '%'
 </select>
 
-<select id="getLists" parameterType="map" resultType="com.base.app.main.dto.MainDTO">
+<select id="getLists" parameterType="map" resultType="MainDTO">
 	select * from (
 	select (row_number() over()) AS rnum, data.* from (
 	select num,name,subject,hitCount,
@@ -36,12 +36,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	update board set hitCount=hitCount+1 where num=#{num}
 </update>
 
-<select id="getReadData" parameterType="int" resultType="com.base.app.main.dto.MainDTO">
+<select id="getReadData" parameterType="int" resultType="MainDTO">
 	select num,name,pwd,email,subject,content,IpAddr,
 	hitCount,created from board where num=#{num}
 </select>
 
-<update id="updateData" parameterType="com.base.app.main.dto.MainDTO">
+<update id="updateData" parameterType="MainDTO">
 	update board set name=#{name},pwd=#{pwd},email=#{email},
 	subject=#{subject},content=#{content} where num=#{num}
 </update>
