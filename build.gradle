@@ -1,7 +1,7 @@
 plugins {
 	id 'java'
 	id 'war'
-	id 'org.springframework.boot' version '3.2.6'
+	id 'org.springframework.boot' version '3.3.3'
 	id 'io.spring.dependency-management' version '1.1.4'
 }
 
@@ -30,7 +30,7 @@ dependencies {
 	// JSTL
 	implementation 'jakarta.servlet:jakarta.servlet-api'
 	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
-	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
+	implementation group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl', version: '3.0.1'
 	// JASPER
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 
