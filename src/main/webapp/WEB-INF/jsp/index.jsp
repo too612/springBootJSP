@@ -13,6 +13,7 @@
 <h3>
 <a href="<%=cp %>/list.action">게시판</a>
 <a href="<%=cp %>/board.action">포털</a>
+<a href="<%=cp %>/main.action">메인</a>
 
 </h3>
 

@@ -313,5 +313,13 @@ public class MainController {
 
 		return mav;
 	}
+	@RequestMapping(value = "/main.action",  method = {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView main(HttpServletRequest request) throws Exception{ 
 		
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("main/index");
+
+		return mav;
+	}
+	
 }
