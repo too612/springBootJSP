@@ -7,10 +7,8 @@
 	Version: 1.1
 
 ========== -->
-<%@ page  contentType="text/html; charset=UTF-8"%>
-<%
-	String cp = request.getContextPath();
-%>
+<%@ page contentType="text/html; charset=UTF-8"%> <% String cp =
+request.getContextPath(); %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,29 +18,52 @@
     <title>Play | Free Startup and SaaS Landing Page Template by UIdeck</title>
 
     <!-- Primary Meta Tags -->
-<meta name="title" content="Play - Free Open Source HTML Bootstrap Template by UIdeck">
-<meta name="description" content="Play - Free Open Source HTML Bootstrap Template by UIdeck Team">
+    <meta
+      name="title"
+      content="Play - Free Open Source HTML Bootstrap Template by UIdeck"
+    />
+    <meta
+      name="description"
+      content="Play - Free Open Source HTML Bootstrap Template by UIdeck Team"
+    />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://uideck.com/play/">
-<meta property="og:title" content="Play - Free Open Source HTML Bootstrap Template by UIdeck">
-<meta property="og:description" content="Play - Free Open Source HTML Bootstrap Template by UIdeck Team">
-<meta property="og:image" content="https://uideck.com/wp-content/uploads/2021/09/play-meta-bs.jpg">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://uideck.com/play/" />
+    <meta
+      property="og:title"
+      content="Play - Free Open Source HTML Bootstrap Template by UIdeck"
+    />
+    <meta
+      property="og:description"
+      content="Play - Free Open Source HTML Bootstrap Template by UIdeck Team"
+    />
+    <meta
+      property="og:image"
+      content="https://uideck.com/wp-content/uploads/2021/09/play-meta-bs.jpg"
+    />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://uideck.com/play/">
-<meta property="twitter:title" content="Play - Free Open Source HTML Bootstrap Template by UIdeck">
-<meta property="twitter:description" content="Play - Free Open Source HTML Bootstrap Template by UIdeck Team">
-<meta property="twitter:image" content="https://uideck.com/wp-content/uploads/2021/09/play-meta-bs.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://uideck.com/play/" />
+    <meta
+      property="twitter:title"
+      content="Play - Free Open Source HTML Bootstrap Template by UIdeck"
+    />
+    <meta
+      property="twitter:description"
+      content="Play - Free Open Source HTML Bootstrap Template by UIdeck Team"
+    />
+    <meta
+      property="twitter:image"
+      content="https://uideck.com/wp-content/uploads/2021/09/play-meta-bs.jpg"
+    />
 
     <!--====== Favicon Icon ======-->
     <link
       rel="shortcut icon"
       href="resources/assets/images/favicon.svg"
       type="image/svg"
-
     />
 
     <!-- ===== All CSS files ===== -->
@@ -156,12 +177,22 @@
               </p>
               <ul class="ud-hero-buttons">
                 <li>
-                  <a href="https://links.uideck.com/play-bootstrap-download" rel="nofollow noopener" target="_blank" class="ud-main-btn ud-white-btn">
+                  <a
+                    href="https://links.uideck.com/play-bootstrap-download"
+                    rel="nofollow noopener"
+                    target="_blank"
+                    class="ud-main-btn ud-white-btn"
+                  >
                     Download Now
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/uideck/play-bootstrap" rel="nofollow noopener" target="_blank" class="ud-main-btn ud-link-btn">
+                  <a
+                    href="https://github.com/uideck/play-bootstrap"
+                    rel="nofollow noopener"
+                    target="_blank"
+                    class="ud-main-btn ud-link-btn"
+                  >
                     Learn More <i class="lni lni-arrow-right"></i>
                   </a>
                 </li>
@@ -174,7 +205,10 @@
               <img src="resources/assets/images/hero/brand.svg" alt="brand" />
             </div>
             <div class="ud-hero-image wow fadeInUp" data-wow-delay=".25s">
-              <img src="resources/assets/images/hero/hero-image.svg" alt="hero-image" />
+              <img
+                src="resources/assets/images/hero/hero-image.svg"
+                alt="hero-image"
+              />
               <img
                 src="resources/assets/images/hero/dotted-shape.svg"
                 alt="shape"
@@ -301,7 +335,10 @@
             </div>
           </div>
           <div class="ud-about-image">
-            <img src="resources/assets/images/about/about-image.svg" alt="about-image" />
+            <img
+              src="resources/assets/images/about/about-image.svg"
+              alt="about-image"
+            />
           </div>
         </div>
       </div>
@@ -698,10 +735,16 @@
               </div>
               <div class="ud-brands-logo">
                 <div class="ud-single-logo">
-                  <img src="resources/assets/images/brands/ayroui.svg" alt="ayroui" />
+                  <img
+                    src="resources/assets/images/brands/ayroui.svg"
+                    alt="ayroui"
+                  />
                 </div>
                 <div class="ud-single-logo">
-                  <img src="resources/assets/images/brands/uideck.svg" alt="uideck" />
+                  <img
+                    src="resources/assets/images/brands/uideck.svg"
+                    alt="uideck"
+                  />
                 </div>
                 <div class="ud-single-logo">
                   <img
@@ -750,7 +793,10 @@
             <div class="ud-single-team wow fadeInUp" data-wow-delay=".1s">
               <div class="ud-team-image-wrapper">
                 <div class="ud-team-image">
-                  <img src="resources/assets/images/team/team-01.png" alt="team" />
+                  <img
+                    src="resources/assets/images/team/team-01.png"
+                    alt="team"
+                  />
                 </div>
 
                 <img
@@ -791,7 +837,10 @@
             <div class="ud-single-team wow fadeInUp" data-wow-delay=".15s">
               <div class="ud-team-image-wrapper">
                 <div class="ud-team-image">
-                  <img src="resources/assets/images/team/team-02.png" alt="team" />
+                  <img
+                    src="resources/assets/images/team/team-02.png"
+                    alt="team"
+                  />
                 </div>
 
                 <img
@@ -832,7 +881,10 @@
             <div class="ud-single-team wow fadeInUp" data-wow-delay=".2s">
               <div class="ud-team-image-wrapper">
                 <div class="ud-team-image">
-                  <img src="resources/assets/images/team/team-03.png" alt="team" />
+                  <img
+                    src="resources/assets/images/team/team-03.png"
+                    alt="team"
+                  />
                 </div>
 
                 <img
@@ -873,7 +925,10 @@
             <div class="ud-single-team wow fadeInUp" data-wow-delay=".25s">
               <div class="ud-team-image-wrapper">
                 <div class="ud-team-image">
-                  <img src="resources/assets/images/team/team-04.png" alt="team" />
+                  <img
+                    src="resources/assets/images/team/team-04.png"
+                    alt="team"
+                  />
                 </div>
 
                 <img
