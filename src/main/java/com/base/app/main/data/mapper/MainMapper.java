@@ -1,11 +1,11 @@
-package com.base.app.main.mapper;
+package com.base.app.main.data.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import com.base.app.main.dto.MainDTO;
+import com.base.app.main.data.dto.MainDTO;
 
 @Mapper // Mapper로 등록 시킨다.
 public interface MainMapper {

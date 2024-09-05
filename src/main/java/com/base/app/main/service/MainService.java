@@ -2,7 +2,7 @@ package com.base.app.main.service;
 
 import java.util.List;
 
-import com.base.app.main.dto.MainDTO;
+import com.base.app.main.data.dto.MainDTO;
 
 public interface MainService {
 

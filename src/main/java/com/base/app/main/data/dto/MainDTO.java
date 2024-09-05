@@ -1,4 +1,4 @@
-package com.base.app.main.dto;
+package com.base.app.main.data.dto;
 
 import lombok.Getter;
 import lombok.Setter;

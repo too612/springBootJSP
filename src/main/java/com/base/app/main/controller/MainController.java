@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.base.app.common.util.MyUtil;
-import com.base.app.main.dto.MainDTO;
+import com.base.app.main.data.dto.MainDTO;
 import com.base.app.main.service.MainService;
 
 import jakarta.annotation.Resource;

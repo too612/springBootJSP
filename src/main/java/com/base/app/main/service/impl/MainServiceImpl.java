@@ -1,13 +1,13 @@
-package com.base.app.main.impl;
+package com.base.app.main.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.base.app.main.dto.MainDTO;
 import com.base.app.main.service.MainService;
-import com.base.app.main.mapper.MainMapper;
+import com.base.app.main.data.dto.MainDTO;
+import com.base.app.main.data.mapper.MainMapper;
 
 //MainService 인터페이스를 구현한 클래스
 @Service // 객체 생성
