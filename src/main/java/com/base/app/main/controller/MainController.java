@@ -38,6 +38,21 @@ public class MainController {
 		return mav;
 	}
 
+	@RequestMapping(value = "/main.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public String main(HttpServletRequest request) throws Exception {
+
+		return "main/index";
+	}
+	@RequestMapping(value = "/about.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView about(HttpServletRequest request) throws Exception {
+
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("main/about");
+
+		return mav;
+	}
+	
+
 	@RequestMapping(value = "/created.action", method = RequestMethod.GET)
 	public ModelAndView created() throws Exception {
 
@@ -305,14 +320,4 @@ public class MainController {
 
 		return mav;
 	}
-
-	@RequestMapping(value = "/main.action", method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView main(HttpServletRequest request) throws Exception {
-
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("main/index");
-
-		return mav;
-	}
-
 }
