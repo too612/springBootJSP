@@ -8,8 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * @Class Name  : ApiReceiveService.java
- * @Description : MIS ìˆ˜ì‹ ìš©
- * @author		: ê¹€ì„±í˜¸
+ * @Description : MIS ¼ö½Å¿ë
+ * @author		: ±è¼ºÈ£
  * @since		: 2024.05.27
  * @version		: 1.0
  * @see
@@ -17,9 +17,9 @@ import jakarta.servlet.http.HttpServletRequest;
  * <pre>
  * << Modification Information >>
  *
- *    ìˆ˜ì •ì¼            ìˆ˜ì •ì          ìˆ˜ì •ë‚´ìš©
+ *    ¼öÁ¤ÀÏ            ¼öÁ¤ÀÚ          ¼öÁ¤³»¿ë
  *  ----------  --------  ---------------------------
- *  2024.05.27   ê¹€ì„±í˜¸          ìµœì´ˆ ìƒì„±
+ *  2024.05.27   ±è¼ºÈ£          ÃÖÃÊ »ı¼º
  */
 public interface ApiReceiveService {
 	

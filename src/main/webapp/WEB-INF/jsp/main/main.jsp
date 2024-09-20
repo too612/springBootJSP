@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <%@ include file= "../include/header.jsp" %>
 <head>
     
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=EUC-KR" />
     <title>HTML !DOCTYPE declaration</title>
 </head>
 <script>
@@ -12,21 +12,21 @@
 
     $(function() {
 			
-        // ì·¨í•©
+        // ÃëÇÕ
         $('#test').click(function(){
             var test = fn_callTest();
-            alert("ê²°ê³¼ê°’->" + test);
+            alert("°á°ú°ª->" + test);
         });
         // api
         $('#call').click(function(){
             var test = fn_callAPI();
-            alert("ê²°ê³¼ê°’->" + test);
+            alert("°á°ú°ª->" + test);
         });
     });
 
     /*
     * Function Name : fn_callTest
-    * Description   : ê²€í† ì˜ê²¬ ê°€ì ¸ì˜¤ê¸°
+    * Description   : °ËÅäÀÇ°ß °¡Á®¿À±â
     * param		 : N/A
     */
 function fn_callTest(){
@@ -70,13 +70,63 @@ function fn_callTest(){
             error		: function(request, status, error) {
                             //alert("error==>" + status);
                             }
-    }).responseText;
-}
+        }).responseText;    
+    }
+
+    function fn_fetchGet() {
+        fetch("http://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=10&serviceKey=SFJXw8594jTUvCqXeYftokgCI0Bz8gS3%2FdAYN7gnv0atIE%2BJJwZyqQZczX2z6rSGhGsgHeMO7bfc5Oe6v2MN5Q%3D%3D")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(myJson) {
+            console.log(JSON.stringify(myJson));
+        })
+        .then(function(error){
+            console.log("error:", error);
+        });
+    }
+
+    function fn_fetchPost() {
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                title: "Test",
+                body: "I am testing!",
+                userId: 1,
+            }),
+            })
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+            .catch((error) => console.log("error:", error));
+    }
+    
+
+    function fn_api() {
+        fetch(domainName+ "/main/api.do", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                title: "api",
+                body: "I am testing!",
+                userId: 1,
+            }),
+            })
+        .then((response) => response())
+        .then((data) => console.log(data))
+        .catch((error) => console.log("error:", error));
+    }
+
 </script>
 <body>
-    <!-- íŽ˜ì´ì§€ ì†Œê°œ, ê²€ìƒ‰, ì œëª© ë¡œê³  ë“±-->
+    <!-- https://boomrabbit.tistory.com/245 -->
+    <!-- ÆäÀÌÁö ¼Ò°³, °Ë»ö, Á¦¸ñ ·Î°í µî-->
     <header>
-        <!-- ë„¤ë¹„ê²Œì´ì…˜ë°”ëŠ” ì£¼ë¡œ header ì•ˆì— êµ¬ì„±í•œë‹¤.-->
+        <!-- ³×ºñ°ÔÀÌ¼Ç¹Ù´Â ÁÖ·Î header ¾È¿¡ ±¸¼ºÇÑ´Ù.-->
         <nav class="navbar">
             <div class="navbar__logo">
               <i class="fas fa-blog"></i>
@@ -101,21 +151,24 @@ function fn_callTest(){
               </a>
         </nav>
     </header>
-    <!-- bodyì˜ í•µì‹¬ë‚´ìš©, í•µì‹¬ì£¼ì œ / í™•ìž¥í•˜ëŠ” ì½˜í…ì¸  -->
+    <!-- bodyÀÇ ÇÙ½É³»¿ë, ÇÙ½ÉÁÖÁ¦ / È®ÀåÇÏ´Â ÄÜÅÙÃ÷ -->
     <main>
         <button id="test">111</button>
         <button id="call">call</button>
+        <button onclick="fn_fetchGet()">fetch get</button>
+        <button onclick="fn_fetchPost()">fetch post</button>
+        <button onclick="fn_api()">api</button>
     </main>
-    <!-- ë¬¸ì„œì˜ ë…ë¦½ì ì¸ êµ¬íš -->
+    <!-- ¹®¼­ÀÇ µ¶¸³ÀûÀÎ ±¸È¹ -->
     <section>
-        <!-- ë¬¸ì„œ, íŽ˜ì´ì§€ ì•ˆì— ë…ë¦½ì  êµ¬íš-->
+        <!-- ¹®¼­, ÆäÀÌÁö ¾È¿¡ µ¶¸³Àû ±¸È¹-->
         <article></article>
         <article></article>
     </section>
-    <!-- ë¬¸ì„œì— ê°„ì ‘ì  ê´€ë ¨ìžˆëŠ” ì»¨í…ì¸ ë“¤ -->
+    <!-- ¹®¼­¿¡ °£Á¢Àû °ü·ÃÀÖ´Â ÄÁÅÙÃ÷µé -->
     <aside>
     </aside>
-    <!-- ê°€ìž¥ ì•„ëž˜, ìž‘ì„±ìž, ì €ìž‘ê¶Œ ì •ë³´ ë“±-->
+    <!-- °¡Àå ¾Æ·¡, ÀÛ¼ºÀÚ, ÀúÀÛ±Ç Á¤º¸ µî-->
     <footer>
     </footer>
 </body>

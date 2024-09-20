@@ -7,14 +7,14 @@
 	Version: 1.1
 
 ========== -->
-<%@ page  contentType="text/html; charset=UTF-8"%>
+<%@ page  contentType="text/html; charset=EUC-KR"%>
 <%
 	String cp = request.getContextPath();
 %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="EUC-KR" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Play | Open source Project by UIdeck</title>
@@ -145,7 +145,7 @@
               <div class="ud-contact-title">
                 <span>CONTACT US</span>
                 <h2>
-                  Letâ€™s talk about <br />
+                  Let??™s talk about <br />
                   Love to hear from you!
                 </h2>
               </div>

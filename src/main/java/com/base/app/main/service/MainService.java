@@ -1,5 +1,6 @@
 package com.base.app.main.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.base.app.main.data.dto.MainDTO;
@@ -22,5 +23,7 @@ public interface MainService {
 	public void updateData(MainDTO dto) throws Exception;
 
 	public void deleteData(int num) throws Exception;
+
+	public String api(HashMap<String, Object> map) throws Exception;
 
 }

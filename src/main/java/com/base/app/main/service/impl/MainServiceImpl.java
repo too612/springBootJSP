@@ -1,22 +1,32 @@
 package com.base.app.main.service.impl;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.text.ParseException;
+import java.util.HashMap;
 import java.util.List;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.base.app.main.service.MainService;
 import com.base.app.main.data.dto.MainDTO;
 import com.base.app.main.data.mapper.MainMapper;
+import com.base.app.main.service.MainService;
 
-//MainService ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ í´ëž˜ìŠ¤
-@Service // ê°ì²´ ìƒì„±
+//MainService ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ Å¬·¡½º
+@Service // °´Ã¼ »ý¼º
 public class MainServiceImpl implements MainService {
 
-	@Autowired // MainMapperì— ìžˆëŠ” sqlë¬¸ì„ MainServiceImplë¡œ ì½ì–´ì™€ì„œ ì˜ì¡´ì„±ì£¼ìž…í•˜ì—¬ ê°ì²´ìƒì„± í•œê²ƒ.
-	private MainMapper mainMapper; // MainMapper ì˜ì¡´ì„± ì£¼ìž…
+	@Autowired // MainMapper¿¡ ÀÖ´Â sql¹®À» MainServiceImpl·Î ÀÐ¾î¿Í¼­ ÀÇÁ¸¼ºÁÖÀÔÇÏ¿© °´Ã¼»ý¼º ÇÑ°Í.
+	private MainMapper mainMapper; // MainMapper ÀÇÁ¸¼º ÁÖÀÔ
 
-	// ê²½ë¡œ : MainController -> MainService(I) -> MainServiceImpl(C) ->
+	// °æ·Î : MainController -> MainService(I) -> MainServiceImpl(C) ->
 	// MainMapper(I) -> MainMapper.xml
 
 	@Override
@@ -59,4 +69,57 @@ public class MainServiceImpl implements MainService {
 		mainMapper.deleteData(num);
 	}
 
-}
+	@Override
+	public String api(HashMap<String, Object> map) throws Exception {
+		
+		String result = "";
+		if ("api".equals(map.get("title").toString())) {
+			//http://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=10&serviceKey=SFJXw8594jTUvCqXeYftokgCI0Bz8gS3%2FdAYN7gnv0atIE%2BJJwZyqQZczX2z6rSGhGsgHeMO7bfc5Oe6v2MN5Q%3D%3D
+			StringBuilder urlBuilder = new StringBuilder("http://api.odcloud.kr/api/15077586/v1/centers"); /*URL*/
+			urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=SFJXw8594jTUvCqXeYftokgCI0Bz8gS3%2FdAYN7gnv0atIE%2BJJwZyqQZczX2z6rSGhGsgHeMO7bfc5Oe6v2MN5Q%3D%3D"); /*Service Key*/
+			urlBuilder.append("&" + URLEncoder.encode("page","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*YYYYMMDD*/
+			urlBuilder.append("&" + URLEncoder.encode("perPage","UTF-8") + "=" + URLEncoder.encode("10", "UTF-8")); /*ÆäÀÌÁö´ç ¸ñ·Ï ¼ö*/
+
+			URL url = new URL(urlBuilder.toString());
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Content-type", "application/json");
+			System.out.println("Response code: " + conn.getResponseCode());
+			BufferedReader rd;
+			if(conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+				rd = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+			} else {
+				rd = new BufferedReader(new InputStreamReader(conn.getErrorStream(), "UTF-8"));
+			}
+			StringBuilder sb = new StringBuilder();
+			String line;
+			while ((line = rd.readLine()) != null) {
+				sb.append(line);
+			}
+			rd.close();
+			conn.disconnect();
+			//System.out.println(sb.toString());
+
+			result = sb.toString();
+
+			// 1. ¹®ÀÚ¿­ ÇüÅÂÀÇ JSONÀ» ÆÄ½ÌÇÏ±â À§ÇÑ JSONParser °´Ã¼ »ý¼º.
+			JSONParser parser = new JSONParser();
+			// 2. ¹®ÀÚ¿­À» JSON ÇüÅÂ·Î JSONObject °´Ã¼¿¡ ÀúÀå.
+			JSONObject obj = (JSONObject)parser.parse(result);
+/*
+			JSONObject responseResult = (JSONObject)obj.get("data");
+			JSONObject bodyResult = (JSONObject)responseResult.get("data");
+			JSONObject itemsResult = (JSONObject)bodyResult.get("items");
+			JSONArray itemResult = (JSONArray) itemsResult.get("item");
+//            JSONObject itemResult = (JSONObject)itemsResult.get("item");
+
+			for (Object item : itemResult) {
+				System.out.println(item);
+			}*/
+		}
+
+			
+		return result;
+	}
+
+	}

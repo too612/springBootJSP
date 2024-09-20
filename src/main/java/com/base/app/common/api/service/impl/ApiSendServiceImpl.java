@@ -36,8 +36,8 @@ import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * @Class Name  : ApiSendServiceImpl.java
- * @Description : MIS ë°œì†¡ìš©
- * @author		: ê¹€ì„±í˜¸
+ * @Description : MIS ¹ß¼Û¿ë
+ * @author		: ±è¼ºÈ£
  * @since		: 2024.05.27
  * @version		: 1.0
  * @see
@@ -45,9 +45,9 @@ import jakarta.servlet.http.HttpServletRequest;
  * <pre>
  * << Modification Information >>
  *
- *    ìˆ˜ì •ì¼            ìˆ˜ì •ì          ìˆ˜ì •ë‚´ìš©
+ *    ¼öÁ¤ÀÏ            ¼öÁ¤ÀÚ          ¼öÁ¤³»¿ë
  *  ----------  --------  ---------------------------
- *  2024.05.27   ê¹€ì„±í˜¸          ìµœì´ˆ ìƒì„±
+ *  2024.05.27   ±è¼ºÈ£          ÃÖÃÊ »ı¼º
  */
 @Service("common.api.service.ApiSendService")
 public class ApiSendServiceImpl implements ApiSendService{
@@ -55,7 +55,7 @@ public class ApiSendServiceImpl implements ApiSendService{
 	//private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	/**
-	 * API ìš”ì²­
+	 * API ¿äÃ»
 	 * @param HttpServletRequest param : parameter
 	 * @return String
 	 */
@@ -64,7 +64,7 @@ public class ApiSendServiceImpl implements ApiSendService{
 
 		HashMap<String, Object> searchMap = convertMap(param);
 		
-		// í˜¸ì¶œí•´ì•¼ í•˜ëŠ” API ì£¼ì†Œ ì‘ì„±(ë°ì´í„°ê°€ JSONí˜•ì‹ìœ¼ë¡œ RETURN í•´ì£¼ëŠ” URL ì •ë³´ë¥¼ ì‘ì„±)
+		// È£ÃâÇØ¾ß ÇÏ´Â API ÁÖ¼Ò ÀÛ¼º(µ¥ÀÌÅÍ°¡ JSONÇü½ÄÀ¸·Î RETURN ÇØÁÖ´Â URL Á¤º¸¸¦ ÀÛ¼º)
 		String serverURL = "http://localhost:8080/";
 		String httpType = "http";
 		String rUrl = "common/api/ApiReceive/ReceiveApiJSON.do";
@@ -72,37 +72,37 @@ public class ApiSendServiceImpl implements ApiSendService{
 		Map<String, Object> rSearchMap = searchMap;
 		String rJSON = "";
 		
-		// í™”í•™ì •ë³´ ì¡°íšŒ
+		// È­ÇĞÁ¤º¸ Á¶È¸
 		if ("Product/search.do".equals(String.valueOf(searchMap.get("SCH_API_TYPE")))) {
 			rSearchMap.put("productName", searchMap.get("productName"));
 			rSearchMap.put("companyName", searchMap.get("companyName"));
 			rSearchMap.put("casNo", searchMap.get("casNo"));
 			rSearchMap.put("catNo", searchMap.get("catNo"));
-		// ì¸ì‚¬ì •ë³´ ìŠ¤í‚¤ë§ˆ
+		// ÀÎ»çÁ¤º¸ ½ºÅ°¸¶
 		} else if ("USR".equals(String.valueOf(searchMap.get("SCH_API_TYPE")))) {
-			System.out.println("ì§„ì…");
+			System.out.println("ÁøÀÔ");
 			rSearchMap.put("SCH_USER_NAME", GeneralUtil.nullToString(String.valueOf(searchMap.get("SCH_USER_NAME"))));
-		// ë¶€ì„œì •ë³´ ìŠ¤í‚¤ë§ˆ
+		// ºÎ¼­Á¤º¸ ½ºÅ°¸¶
 		} else if ("DPT".equals(String.valueOf(searchMap.get("SCH_API_TYPE")))) {
-			System.out.println("ì§„ì…2");
+			System.out.println("ÁøÀÔ2");
 			rSearchMap.put("SCH_GROUP_NAME", GeneralUtil.nullToString(String.valueOf(searchMap.get("SCH_GROUP_NAME"))));
 		}
 		else if ("FILE_01".equals(String.valueOf(searchMap.get("PGM_ID")))) {
 			rSearchMap.put("PGM_ID", searchMap.get("PGM_ID"));
 			
-			String filePath = "C:\\Users\\msi\\Desktop\\test.pdf"; // ì‹¤ì œ PDF íŒŒì¼ ê²½ë¡œë¡œ ë³€ê²½í•´ì£¼ì„¸ìš”
+			String filePath = "C:\\Users\\msi\\Desktop\\test.pdf"; // ½ÇÁ¦ PDF ÆÄÀÏ °æ·Î·Î º¯°æÇØÁÖ¼¼¿ä
 			
 			Path path = Paths.get(filePath);
 			if (Files.notExists(path)) {
 				throw new IllegalArgumentException("File is not exists!");
 			}
 			// try {
-			// 	// byteë¡œ ë³€ê²½
+			// 	// byte·Î º¯°æ
 			// 	byte[] bytes = Files.readAllBytes(path);
 				
-			// 	// byte->base64ë¡œ ë³€ê²½ í›„ String ì €ì¥
+			// 	// byte->base64·Î º¯°æ ÈÄ String ÀúÀå
 			// 	//String s = new String(Base64.encodeBase64(bytes));
-			// 	// byte ë°ì´í„° ì„¸íŒ…
+			// 	// byte µ¥ÀÌÅÍ ¼¼ÆÃ
 			// 	//rSearchMap.put("FILE_BLOB", s);
 				
 			// }catch (IOException e) {
@@ -116,11 +116,11 @@ public class ApiSendServiceImpl implements ApiSendService{
 	
 		
 	/**
-	 * API í˜¸ì¶œ
+	 * API È£Ãâ
 	 * @param String url : URL
-	 * @param String httpType : HTTP íƒ€ì…(HTTP, HTTPS)
-	 * @param String method : í˜¸ì¶œíƒ€ì…(GET, POST)
-	 * @param Map<String, Object> rSearchMap : ê²€ìƒ‰ì¡°ê±´
+	 * @param String httpType : HTTP Å¸ÀÔ(HTTP, HTTPS)
+	 * @param String method : È£ÃâÅ¸ÀÔ(GET, POST)
+	 * @param Map<String, Object> rSearchMap : °Ë»öÁ¶°Ç
 	 * @return String
 	 */
 	public String getHttpCallMethod(String url, String httpType, String method, Map<String, Object> rSearchMap) throws Exception {
@@ -147,17 +147,17 @@ public class ApiSendServiceImpl implements ApiSendService{
 			
 			if ("http".equals(httpType)) {
 				conn.setDoInput(true);
-				conn.setDoOutput(true); //URL ì—°ê²°ì‹œ ë°ì´í„°ë¥¼ ì‚¬ìš©í• ì§€ì— ëŒ€í•œ ì„¤ì • ( defualt false )
+				conn.setDoOutput(true); //URL ¿¬°á½Ã µ¥ÀÌÅÍ¸¦ »ç¿ëÇÒÁö¿¡ ´ëÇÑ ¼³Á¤ ( defualt false )
 			} else if ("https".equals(httpType)) {
 				conns.setDoInput(true);
-				conns.setDoOutput(true); //URL ì—°ê²°ì‹œ ë°ì´í„°ë¥¼ ì‚¬ìš©í• ì§€ì— ëŒ€í•œ ì„¤ì • ( defualt false )
+				conns.setDoOutput(true); //URL ¿¬°á½Ã µ¥ÀÌÅÍ¸¦ »ç¿ëÇÒÁö¿¡ ´ëÇÑ ¼³Á¤ ( defualt false )
 			}
 			
 			try (DataOutputStream dataOutputStream = new DataOutputStream(conn.getOutputStream());){
 				
 				StringBuffer param = new StringBuffer();
-				// ê²€ìƒ‰ì¡°ê±´ì— í•´ë‹¹í•˜ëŠ” ì •ë³´ë¥¼ ì„¸íŒ…í•œë‹¤.
-				param.append("&searchKey=");	// ì•„ì´ì— ì§€í…Œí¬ íŒŒë¼ë¯¸í„° ì „ì†¡ì‹œì—ëŠ” í•´ì œ
+				// °Ë»öÁ¶°Ç¿¡ ÇØ´çÇÏ´Â Á¤º¸¸¦ ¼¼ÆÃÇÑ´Ù.
+				param.append("&searchKey=");	// ¾ÆÀÌ¿¥ÁöÅ×Å© ÆÄ¶ó¹ÌÅÍ Àü¼Û½Ã¿¡´Â ÇØÁ¦
 				JSONObject jsonObject = new JSONObject(rSearchMap);
 				param.append(URLEncoder.encode(jsonObject.toString(), "utf-8"));
 				
@@ -180,9 +180,9 @@ public class ApiSendServiceImpl implements ApiSendService{
 	}
 	
 	/**
-	 * httpConnection ì„¸íŒ…í•˜ê¸°
+	 * httpConnection ¼¼ÆÃÇÏ±â
 	 * @param String strUrl : URL
-	 * @param String method : í˜¸ì¶œíƒ€ì…(GET, POST)
+	 * @param String method : È£ÃâÅ¸ÀÔ(GET, POST)
 	 * @return HttpURLConnection
 	 */
 	public HttpURLConnection getHttpURLConnection(String strUrl, String method) throws Exception {
@@ -192,8 +192,8 @@ public class ApiSendServiceImpl implements ApiSendService{
 			url = new URL(strUrl);
 			
 			conn = (HttpURLConnection) url.openConnection();
-			conn.setRequestMethod(method); //Method ë°©ì‹ ì„¤ì •. GET/POST/DELETE/PUT/HEAD/OPTIONS/TRACE
-			conn.setConnectTimeout(5000); //ì—°ê²°ì œí•œ ì‹œê°„ ì„¤ì •. 5ì´ˆ ê°„ ì—°ê²°ì‹œë„
+			conn.setRequestMethod(method); //Method ¹æ½Ä ¼³Á¤. GET/POST/DELETE/PUT/HEAD/OPTIONS/TRACE
+			conn.setConnectTimeout(5000); //¿¬°áÁ¦ÇÑ ½Ã°£ ¼³Á¤. 5ÃÊ °£ ¿¬°á½Ãµµ
 			conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
@@ -205,22 +205,22 @@ public class ApiSendServiceImpl implements ApiSendService{
 	}
 	
 	/**
-	 * httpsConnection ì„¸íŒ…í•˜ê¸°
+	 * httpsConnection ¼¼ÆÃÇÏ±â
 	 * @param String strUrl : URL
-	 * @param String method : í˜¸ì¶œíƒ€ì…(GET, POST)
+	 * @param String method : È£ÃâÅ¸ÀÔ(GET, POST)
 	 * @return HttpsURLConnection
 	 */
 	public HttpsURLConnection getHttpsURLConnection(String strUrl, String method) throws Exception {
 		URL url;
 		HttpsURLConnection conn = null;
 		try {
-			// SSL API í˜¸ì¶œë°©ì‹ì— ë”°ë¥¸ SSL ë¬´ì‹œ ë¡œì§ ì¶”ê°€
-			// ignoreSSL();						// httpsë¡œ APIí†µì‹ ì‹œ ë¬¸ì œê°€ ë°œìƒí•  ê²½ìš°ì— í•œí•˜ì—¬ ì£¼ì„ í•´ì œ í›„ ì§„í–‰
+			// SSL API È£Ãâ¹æ½Ä¿¡ µû¸¥ SSL ¹«½Ã ·ÎÁ÷ Ãß°¡
+			// ignoreSSL();						// https·Î APIÅë½Å½Ã ¹®Á¦°¡ ¹ß»ıÇÒ °æ¿ì¿¡ ÇÑÇÏ¿© ÁÖ¼® ÇØÁ¦ ÈÄ ÁøÇà
 			url = new URL(strUrl);
 			
 			conn = (HttpsURLConnection) url.openConnection();
-			conn.setRequestMethod(method);		//Method ë°©ì‹ ì„¤ì •. GET/POST/DELETE/PUT/HEAD/OPTIONS/TRACE
-			conn.setConnectTimeout(5000);		//ì—°ê²°ì œí•œ ì‹œê°„ ì„¤ì •. 5ì´ˆ ê°„ ì—°ê²°ì‹œë„
+			conn.setRequestMethod(method);		//Method ¹æ½Ä ¼³Á¤. GET/POST/DELETE/PUT/HEAD/OPTIONS/TRACE
+			conn.setConnectTimeout(5000);		//¿¬°áÁ¦ÇÑ ½Ã°£ ¼³Á¤. 5ÃÊ °£ ¿¬°á½Ãµµ
 			conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
@@ -233,7 +233,7 @@ public class ApiSendServiceImpl implements ApiSendService{
 	}
 	
 	/**
-	 * SSL ì„¸ì…˜ì—¬ë¶€ í™•ì¸(SSL í†µê³¼ë¡œì§ ì‹œì‘)
+	 * SSL ¼¼¼Ç¿©ºÎ È®ÀÎ(SSL Åë°ú·ÎÁ÷ ½ÃÀÛ)
 	 */
 	public static void ignoreSSL() throws Exception{
 		HostnameVerifier hv = new HostnameVerifier() {
@@ -246,7 +246,7 @@ public class ApiSendServiceImpl implements ApiSendService{
 	}
 
 	/**
-	 * SSL ì¸ì¦ í•­ìƒ í—ˆìš©í•˜ê¸°
+	 * SSL ÀÎÁõ Ç×»ó Çã¿ëÇÏ±â
 	 */
 	private static void trustAllHttpsCertificates() throws Exception {
 		TrustManager[] trustAllCerts = new TrustManager[1];
@@ -258,7 +258,7 @@ public class ApiSendServiceImpl implements ApiSendService{
 	}
 	
 	/**
-	 * SSL ì¸ì¦ í—ˆìš©ì„ ìœ„í•œ CLASS
+	 * SSL ÀÎÁõ Çã¿ëÀ» À§ÇÑ CLASS
 	 */
 	static class miTM implements TrustManager,X509TrustManager {
 		public X509Certificate[] getAcceptedIssuers() {
@@ -283,7 +283,7 @@ public class ApiSendServiceImpl implements ApiSendService{
 	}
 	
 	/**
-	 * httpë¡œ í˜¸ì¶œëœ ê²°ê³¼ê°’ ë°›ê¸°
+	 * http·Î È£ÃâµÈ °á°ú°ª ¹Ş±â
 	 * @param HttpURLConnection conn : HttpURLConnection
 	 * @return String
 	 */
@@ -292,10 +292,10 @@ public class ApiSendServiceImpl implements ApiSendService{
 
 		try {
 			if(conn.getResponseCode() == 200) {
-				//ì •ìƒì ìœ¼ë¡œ ë°ì´í„°ë¥¼ ë°›ì•˜ì„ê²½ìš°
+				//Á¤»óÀûÀ¸·Î µ¥ÀÌÅÍ¸¦ ¹Ş¾ÒÀ»°æ¿ì
 				sb = readResopnseData(conn.getInputStream());
 			}else{
-				//ì •ìƒì ìœ¼ë¡œ ë°ì´í„°ë¥¼ ë°›ì§€ ëª»í•œ ê²½ìš° 
+				//Á¤»óÀûÀ¸·Î µ¥ÀÌÅÍ¸¦ ¹ŞÁö ¸øÇÑ °æ¿ì 
 				System.out.println(conn.getResponseCode());
 				System.out.println(conn.getResponseMessage());
 				
@@ -308,7 +308,7 @@ public class ApiSendServiceImpl implements ApiSendService{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}finally {
-			conn.disconnect(); //ì—°ê²° í•´ì œ
+			conn.disconnect(); //¿¬°á ÇØÁ¦
 		};
 		
 		if(sb == null) return null;
@@ -317,7 +317,7 @@ public class ApiSendServiceImpl implements ApiSendService{
 	}
 	
 	/**
-	 * httpSë¡œ í˜¸ì¶œëœ ê²°ê³¼ê°’ ë°›ê¸°
+	 * httpS·Î È£ÃâµÈ °á°ú°ª ¹Ş±â
 	 * @param HttpSURLConnection conn : HttpURLConnection
 	 * @return String
 	 */
@@ -326,10 +326,10 @@ public class ApiSendServiceImpl implements ApiSendService{
 
 		try {
 			if(conns.getResponseCode() == 200) {
-				//ì •ìƒì ìœ¼ë¡œ ë°ì´í„°ë¥¼ ë°›ì•˜ì„ê²½ìš°
+				//Á¤»óÀûÀ¸·Î µ¥ÀÌÅÍ¸¦ ¹Ş¾ÒÀ»°æ¿ì
 				sb = readResopnseData(conns.getInputStream());
 			}else{
-				//ì •ìƒì ìœ¼ë¡œ ë°ì´í„°ë¥¼ ë°›ì§€ ëª»í•œ ê²½ìš° 
+				//Á¤»óÀûÀ¸·Î µ¥ÀÌÅÍ¸¦ ¹ŞÁö ¸øÇÑ °æ¿ì 
 				System.out.println(conns.getResponseCode());
 				System.out.println(conns.getResponseMessage());
 				
@@ -342,7 +342,7 @@ public class ApiSendServiceImpl implements ApiSendService{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}finally {
-			conns.disconnect(); //ì—°ê²° í•´ì œ
+			conns.disconnect(); //¿¬°á ÇØÁ¦
 		};
 		
 		if(sb == null) return null;
@@ -351,7 +351,7 @@ public class ApiSendServiceImpl implements ApiSendService{
 	}
 	
 	/**
-	 * ì‘ë‹µê²°ê³¼ ë°ì´í„° ì„¸íŒ…í•˜ê¸°
+	 * ÀÀ´ä°á°ú µ¥ÀÌÅÍ ¼¼ÆÃÇÏ±â
 	 * @param InputStream in : InputStream
 	 * @return StringBuilder
 	 */
@@ -376,7 +376,7 @@ public class ApiSendServiceImpl implements ApiSendService{
 	}
 	
 	/**
-	 * HttpServletRequest mapìœ¼ë¡œ ë³€í™˜
+	 * HttpServletRequest mapÀ¸·Î º¯È¯
 	 * @param InputStream in : InputStream
 	 * @return hmap
 	 */

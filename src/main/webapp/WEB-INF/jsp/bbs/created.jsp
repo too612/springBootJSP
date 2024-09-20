@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ê²Œ ì‹œ íŒ(SpringBoot-JSP)</title>
+<title>°Ô ½Ã ÆÇ(SpringBoot-JSP)</title>
 
 <link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="resources/css/created.css"/>
@@ -22,7 +22,7 @@
 		str = f.subject.value;
 		str = str.trim();
 		if(!str){
-			alert("\nì œëª©ì„ ì…ë ¥í•˜ì„¸ìš”.");
+			alert("\nÁ¦¸ñÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
 			f.subject.focus();
 			return;
 		}
@@ -31,13 +31,13 @@
 		str = f.name.value;
 		str = str.trim();
 		if(!str){
-			alert("\nì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”.");
+			alert("\nÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä.");
 			f.name.focus();
 			return;
 		}		
 		
 		/* if(!isValidKorean(str)){
-			alert("\nì´ë¦„ì„ ì •í™•íˆ ì…ë ¥í•˜ì„¸ìš”.");
+			alert("\nÀÌ¸§À» Á¤È®È÷ ÀÔ·ÂÇÏ¼¼¿ä.");
 			f.name.focus()
 			return;
 		}*/
@@ -46,7 +46,7 @@
 		
 		if(f.email.value){
 			if(!isValidEmail(f.email.value)){
-				alert("\nì •ìƒì ì¸ E-Mailì„ ì…ë ¥í•˜ì„¸ìš”.");
+				alert("\nÁ¤»óÀûÀÎ E-MailÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
 				f.email.focus();
 				return;
 			}
@@ -55,7 +55,7 @@
 		str = f.content.value;
 		str = str.trim();
 		if(!str){
-			alert("\në‚´ìš©ì„ ì…ë ¥í•˜ì„¸ìš”.");
+			alert("\n³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
 			f.content.focus();
 			return;
 		}
@@ -64,7 +64,7 @@
 		str = f.pwd.value;
 		str = str.trim();
 		if(!str){
-			alert("\níŒ¨ìŠ¤ì›Œë“œë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+			alert("\nÆĞ½º¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
 			f.pwd.focus();
 			return;
 		}
@@ -83,7 +83,7 @@
 
 <div id="bbs">
 	<div id="bbs_title">
-		ê²Œ ì‹œ íŒ(SpringBoot-JSP)
+		°Ô ½Ã ÆÇ(SpringBoot-JSP)
 	</div>
 	
 	<form action="" method="post" name="myForm">
@@ -91,7 +91,7 @@
 		
 		<div class="bbsCreated_bottomLine">
 			<dl>
-				<dt>ì œ&nbsp;&nbsp;&nbsp;&nbsp;ëª©</dt>
+				<dt>Á¦&nbsp;&nbsp;&nbsp;&nbsp;¸ñ</dt>
 				<dd>
 				<input type="text" name="subject" size="60" 
 				maxlength="100" class="boxTF"/>
@@ -101,7 +101,7 @@
 		
 		<div class="bbsCreated_bottomLine">
 			<dl>
-				<dt>ì‘ ì„± ì</dt>
+				<dt>ÀÛ ¼º ÀÚ</dt>
 				<dd>
 				<input type="text" name="name" size="35" 
 				maxlength="20" class="boxTF"/>
@@ -121,7 +121,7 @@
 		
 		<div id="bbsCreated_content">
 			<dl>
-				<dt>ë‚´&nbsp;&nbsp;&nbsp;&nbsp;ìš©</dt>
+				<dt>³»&nbsp;&nbsp;&nbsp;&nbsp;¿ë</dt>
 				<dd>
 				<textarea rows="12" cols="63" name="content"
 				class="boxTA"></textarea>
@@ -131,11 +131,11 @@
 		
 		<div class="bbsCreated_noLine">
 			<dl>
-				<dt>íŒ¨ìŠ¤ì›Œë“œ</dt>
+				<dt>ÆĞ½º¿öµå</dt>
 				<dd>
 				<input type="password" name="pwd" size="35" 
 				maxlength="7" class="boxTF"/>
-				&nbsp;(ê²Œì‹œë¬¼ ìˆ˜ì • ë° ì‚­ì œì‹œ í•„ìš”!!)
+				&nbsp;(°Ô½Ã¹° ¼öÁ¤ ¹× »èÁ¦½Ã ÇÊ¿ä!!)
 				</dd>
 			</dl>		
 		</div>	
@@ -143,10 +143,10 @@
 	</div>
 	
 	<div id="bbsCreated_footer">
-		<input type="button" value=" ë“±ë¡í•˜ê¸° " class="btn2" onclick="sendIt();"/>
-		<input type="reset" value=" ë‹¤ì‹œì…ë ¥ " class="btn2" 
+		<input type="button" value=" µî·ÏÇÏ±â " class="btn2" onclick="sendIt();"/>
+		<input type="reset" value=" ´Ù½ÃÀÔ·Â " class="btn2" 
 		onclick="document.myForm.subject.focus();"/>
-		<input type="button" value=" ì‘ì„±ì·¨ì†Œ " class="btn2" 
+		<input type="button" value=" ÀÛ¼ºÃë¼Ò " class="btn2" 
 		onclick="javascript:location.href='<%=cp%>/list.action';"/>	
 	</div>
 	

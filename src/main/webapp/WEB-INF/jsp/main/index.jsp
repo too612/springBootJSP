@@ -7,7 +7,7 @@
 	Version: 1.1
 
 ========== -->
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page contentType="text/html; charset=EUC-KR" %>
 <%
   String cp=request.getContextPath(); 
 %>
@@ -15,7 +15,7 @@
     <html lang="en">
 
     <head>
-      <meta charset="UTF-8" />
+      <meta charset="EUC-KR" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Play | Free Startup and SaaS Landing Page Template by UIdeck</title>
@@ -50,92 +50,7 @@
 
     <body>
       <!-- ====== Header Start ====== -->
-      <header class="ud-header">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html">
-                  <img src="resources/assets/images/logo/logo.svg" alt="Logo" />
-                </a>
-                <button class="navbar-toggler">
-                  <span class="toggler-icon"> </span>
-                  <span class="toggler-icon"> </span>
-                  <span class="toggler-icon"> </span>
-                </button>
-
-                <div class="navbar-collapse">
-                  <ul id="nav" class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                      <a class="ud-menu-scroll" href="#home">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a class="ud-menu-scroll" href="about.html">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="ud-menu-scroll" href="pricing.html">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="ud-menu-scroll" href="#team">Team</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="ud-menu-scroll" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item nav-item-has-children">
-                      <a href="javascript:void(0)"> Pages </a>
-                      <ul class="ud-submenu">
-                        <li class="ud-submenu-item">
-                          <a href="<%=cp %>/about.do" class="ud-submenu-link">
-                            About Page
-                          </a>
-                        </li>
-                        <li class="ud-submenu-item">
-                          <a href="pricing.html" class="ud-submenu-link">
-                            Pricing Page
-                          </a>
-                        </li>
-                        <li class="ud-submenu-item">
-                          <a href="contact.html" class="ud-submenu-link">
-                            Contact Page
-                          </a>
-                        </li>
-                        <li class="ud-submenu-item">
-                          <a href="blog.html" class="ud-submenu-link">
-                            Blog Grid Page
-                          </a>
-                        </li>
-                        <li class="ud-submenu-item">
-                          <a href="blog-details.html" class="ud-submenu-link">
-                            Blog Details Page
-                          </a>
-                        </li>
-                        <li class="ud-submenu-item">
-                          <a href="login.html" class="ud-submenu-link">
-                            Sign In Page
-                          </a>
-                        </li>
-                        <li class="ud-submenu-item">
-                          <a href="404.html" class="ud-submenu-link">404 Page</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="navbar-btn d-none d-sm-inline-block">
-                  <a href="login.html" class="ud-main-btn ud-login-btn">
-                    Sign In
-                  </a>
-                  <a class="ud-main-btn ud-white-btn" href="javascript:void(0)">
-                    Sign Up
-                  </a>
-                </div>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </header>
+      <%@ include file= "../include/nav.jsp" %>
       <!-- ====== Header End ====== -->
 
       <!-- ====== Hero Start ====== -->
@@ -274,14 +189,14 @@
                 <span class="tag">About Us</span>
                 <h2>Brilliant Toolkit to Build Nextgen Website Faster.</h2>
                 <p>
-                  The main â€˜thrustâ€™ is to focus on educating attendees on how to
+                  The main ??˜thrust??? is to focus on educating attendees on how to
                   best protect highly vulnerable business applications with
                   interactive panel discussions and roundtables led by subject
                   matter experts.
                 </p>
 
                 <p>
-                  The main â€˜thrustâ€™ is to focus on educating attendees on how to
+                  The main ??˜thrust??? is to focus on educating attendees on how to
                   best protect highly vulnerable business applications with
                   interactive panel.
                 </p>
@@ -559,7 +474,7 @@
                 </div>
                 <div class="ud-testimonial-content">
                   <p>
-                    â€œOur members are so impressed. It's intuitive. It's clean.
+                    ??œOur members are so impressed. It's intuitive. It's clean.
                     It's distraction free. If you're building a community.
                   </p>
                 </div>
@@ -585,7 +500,7 @@
                 </div>
                 <div class="ud-testimonial-content">
                   <p>
-                    â€œOur members are so impressed. It's intuitive. It's clean.
+                    ??œOur members are so impressed. It's intuitive. It's clean.
                     It's distraction free. If you're building a community.
                   </p>
                 </div>
@@ -611,7 +526,7 @@
                 </div>
                 <div class="ud-testimonial-content">
                   <p>
-                    â€œOur members are so impressed. It's intuitive. It's clean.
+                    ??œOur members are so impressed. It's intuitive. It's clean.
                     It's distraction free. If you're building a community.
                   </p>
                 </div>
@@ -820,7 +735,7 @@
                 <div class="ud-contact-title">
                   <span>CONTACT US</span>
                   <h2>
-                    Letâ€™s talk about <br />
+                    Let??™s talk about <br />
                     Love to hear from you!
                   </h2>
                 </div>

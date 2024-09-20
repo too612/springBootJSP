@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletRequest;
 public class ExceptionHandlingController implements ErrorController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	// ì—ëŸ¬ í˜ì´ì§€ ì •ì˜
+	// ¿¡·¯ ÆäÀÌÁö Á¤ÀÇ
 	private final String ERROR_404_PAGE_PATH = "/error/404";
 	private final String ERROR_500_PAGE_PATH = "/error/500";
 	private final String ERROR_ETC_PAGE_PATH = "/error/error";
@@ -25,22 +25,22 @@ public class ExceptionHandlingController implements ErrorController {
 	@RequestMapping(value = "/error")
 	public String handleError(HttpServletRequest request, Model model) {
 
-		// ì—ëŸ¬ ì½”ë“œë¥¼ íšë“í•œë‹¤.
+		// ¿¡·¯ ÄÚµå¸¦ È¹µæÇÑ´Ù.
 		Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
 
-		// ì—ëŸ¬ ì½”ë“œì— ëŒ€í•œ ìƒíƒœ ì •ë³´
+		// ¿¡·¯ ÄÚµå¿¡ ´ëÇÑ »óÅÂ Á¤º¸
 		HttpStatus httpStatus = HttpStatus.valueOf(Integer.valueOf(status.toString()));
         
 		if (status != null) {
-			// HttpStatusì™€ ë¹„êµí•´ í˜ì´ì§€ ë¶„ê¸°ë¥¼ ë‚˜ëˆ„ê¸° ìœ„í•œ ë³€ìˆ˜
+			// HttpStatus¿Í ºñ±³ÇØ ÆäÀÌÁö ºĞ±â¸¦ ³ª´©±â À§ÇÑ º¯¼ö
 			int statusCode = Integer.valueOf(status.toString());
 
-			// ë¡œê·¸ë¡œ ìƒíƒœê°’ì„ ê¸°ë¡ ë° ì¶œë ¥
+			// ·Î±×·Î »óÅÂ°ªÀ» ±â·Ï ¹× Ãâ·Â
 			logger.info("httpStatus : " + statusCode);
 
 			// 404 error
 			if (statusCode == HttpStatus.NOT_FOUND.value()) {
-				// ì—ëŸ¬ í˜ì´ì§€ì— í‘œì‹œí•  ì •ë³´
+				// ¿¡·¯ ÆäÀÌÁö¿¡ Ç¥½ÃÇÒ Á¤º¸
 				model.addAttribute("code", status.toString());
 				model.addAttribute("msg", httpStatus.getReasonPhrase());
 				model.addAttribute("timestamp", new Date());
@@ -49,12 +49,12 @@ public class ExceptionHandlingController implements ErrorController {
             
 			// 500 error
 			if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
-				// ì„œë²„ì— ëŒ€í•œ ì—ëŸ¬ì´ê¸° ë•Œë¬¸ì— ì‚¬ìš©ìì—ê²Œ ì •ë³´ë¥¼ ì œê³µí•˜ì§€ ì•ŠëŠ”ë‹¤.
+				// ¼­¹ö¿¡ ´ëÇÑ ¿¡·¯ÀÌ±â ¶§¹®¿¡ »ç¿ëÀÚ¿¡°Ô Á¤º¸¸¦ Á¦°øÇÏÁö ¾Ê´Â´Ù.
 				return ERROR_500_PAGE_PATH;
 			}
 		}
 
-		// ì •ì˜í•œ ì—ëŸ¬ ì™¸ ëª¨ë“  ì—ëŸ¬ëŠ” error/error í˜ì´ì§€ë¡œ ë³´ë‚¸ë‹¤.
+		// Á¤ÀÇÇÑ ¿¡·¯ ¿Ü ¸ğµç ¿¡·¯´Â error/error ÆäÀÌÁö·Î º¸³½´Ù.
 		return ERROR_ETC_PAGE_PATH;
 	}
 }

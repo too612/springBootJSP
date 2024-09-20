@@ -7,14 +7,14 @@
 	Version: 1.1
 
 ========== -->
-<%@ page  contentType="text/html; charset=UTF-8"%>
+<%@ page  contentType="text/html; charset=EUC-KR"%>
 <%
 	String cp = request.getContextPath();
 %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="EUC-KR" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Play | Open source Project by UIdeck</title>
@@ -145,14 +145,14 @@
               <span class="tag">About Us</span>
               <h2>Brilliant Toolkit to Build Nextgen Website Faster.</h2>
               <p>
-                The main ‘thrust’ is to focus on educating attendees on how to
+                The main ??�thrust??? is to focus on educating attendees on how to
                 best protect highly vulnerable business applications with
                 interactive panel discussions and roundtables led by subject
                 matter experts.
               </p>
 
               <p>
-                The main ‘thrust’ is to focus on educating attendees on how to
+                The main ??�thrust??? is to focus on educating attendees on how to
                 best protect highly vulnerable business applications with
                 interactive panel.
               </p>

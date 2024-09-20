@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ê²Œ ì‹œ íŒ(SpringBoot-JSP)</title>
+<title>°Ô ½Ã ÆÇ(SpringBoot-JSP)</title>
 
 <link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="resources/css/article.css"/>
@@ -18,7 +18,7 @@
 <div id="bbs">
 	
 	<div id="bbs_title">
-		ê²Œ ì‹œ íŒ(SpringBoot-JSP)
+		°Ô ½Ã ÆÇ(SpringBoot-JSP)
 	</div>
 	<div id="bbsArticle">
 		
@@ -28,18 +28,18 @@
 		
 		<div class="bbsArticle_bottomLine">
 			<dl>
-				<dt>ìž‘ì„±ìž</dt>
+				<dt>ÀÛ¼ºÀÚ</dt>
 				<dd>${dto.name }</dd>
-				<dt>ì¤„ìˆ˜</dt>
+				<dt>ÁÙ¼ö</dt>
 				<dd>${lineSu }</dd>
 			</dl>		
 		</div>
 		
 		<div class="bbsArticle_bottomLine">
 			<dl>
-				<dt>ë“±ë¡ì¼</dt>
+				<dt>µî·ÏÀÏ</dt>
 				<dd>${dto.created }</dd>
-				<dt>ì¡°íšŒìˆ˜</dt>
+				<dt>Á¶È¸¼ö</dt>
 				<dd>${dto.hitCount }</dd>
 			</dl>		
 		</div>
@@ -63,13 +63,13 @@
 	
 	<div id="bbsArticle_footer">
 		<div id="leftFooter">
-			<input type="button" value=" ìˆ˜ì • " class="btn2" 
+			<input type="button" value=" ¼öÁ¤ " class="btn2" 
 			onclick="javascript:location.href='<%=cp%>/updated.action?num=${dto.num }&${params }'"/>
-			<input type="button" value=" ì‚­ì œ " class="btn2" 
+			<input type="button" value=" »èÁ¦ " class="btn2" 
 			onclick="javascript:location.href='<%=cp%>/deleted_ok.action?num=${dto.num }&${params }'"/>
 		</div>
 		<div id="rightFooter">
-			<input type="button" value=" ë¦¬ìŠ¤íŠ¸ " class="btn2" 
+			<input type="button" value=" ¸®½ºÆ® " class="btn2" 
 			onclick="javascript:location.href='<%=cp%>/list.action?${params }';"/>
 		</div>	
 	</div>

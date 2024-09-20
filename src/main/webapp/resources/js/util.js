@@ -1,39 +1,39 @@
-// ë‚´ìš©ì˜ ê°’ì˜ ë¹ˆê³µë°±ì„ trim(ì•/ë’¤)
+// ³»¿ëÀÇ °ªÀÇ ºó°ø¹éÀ» trim(¾Õ/µÚ)
 String.prototype.trim = function() {
-		var TRIM_PATTERN = /(^\s*)|(\s*$)/g;
-		return this.replace(TRIM_PATTERN, "");
+  var TRIM_PATTERN = /(^\s*)|(\s*$)/g;
+  return this.replace(TRIM_PATTERN, "");
 };
 
-// E-Mail ê²€ì‚¬
+// E-Mail °Ë»ç
 function isValidEmail(email) {
-	var format = /^((\w|[\-\.])+)@((\w|[\-\.])+)\.([A-Za-z]+)$/;
-    if (email.search(format) != -1)
-        return true; //ì˜¬ë°”ë¥¸ í¬ë§· í˜•ì‹
-    return false;
+var format = /^((\w|[\-\.])+)@((\w|[\-\.])+)\.([A-Za-z]+)$/;
+  if (email.search(format) != -1)
+      return true; //¿Ã¹Ù¸¥ Æ÷¸Ë Çü½Ä
+  return false;
 }
 
-// í•œê¸€ í•„í„°ë§
+// ÇÑ±Û ÇÊÅÍ¸µ
 function isValidKorean(data){
-     // UTF-8 ì½”ë“œ ì¤‘ AC00ë¶€í„° D7A3 ê°’ì´ì§€ ê²€ì‚¬
-	var format = /^[\uac00-\ud7a3]*$/g;
-    if (data.search(format) != -1)
-        return true; //ì˜¬ë°”ë¥¸ í¬ë§· í˜•ì‹
-    return false;
+   // UTF-8 ÄÚµå Áß AC00ºÎÅÍ D7A3 °ªÀÌÁö °Ë»ç
+var format = /^[\uac00-\ud7a3]*$/g;
+  if (data.search(format) != -1)
+      return true; //¿Ã¹Ù¸¥ Æ÷¸Ë Çü½Ä
+  return false;
 }
 
-// ë‚ ì§œ ê²€ì‚¬
+// ³¯Â¥ °Ë»ç
 function isValidDate(year, month, day) {
-	var days = new Array (31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+var days = new Array (31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
 
-     if(year%4==0 && year%100 !=0 || year%400==0)
-       days[1]=29;
-     else
-       days[1]=28;
+   if(year%4==0 && year%100 !=0 || year%400==0)
+     days[1]=29;
+   else
+     days[1]=28;
 
-     if(month < 1 || month > 12)
-       return false;
+   if(month < 1 || month > 12)
+     return false;
 
-     if(day > days[month-1] || day < 1)
-       return false;
-     return true;
+   if(day > days[month-1] || day < 1)
+     return false;
+   return true;
 }

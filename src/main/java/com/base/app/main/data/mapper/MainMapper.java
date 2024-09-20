@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.base.app.main.data.dto.MainDTO;
 
-@Mapper // Mapperë¡œ ë“±ë¡ ì‹œí‚¨ë‹¤.
+@Mapper // Mapper·Î µî·Ï ½ÃÅ²´Ù.
 public interface MainMapper {
 
 	public int maxNum() throws Exception;
