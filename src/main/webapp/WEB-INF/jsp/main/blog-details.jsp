@@ -7,14 +7,14 @@
 	Version: 1.1
 
 ========== -->
-<%@ page  contentType="text/html; charset=EUC-KR"%>
+<%@ page  contentType="text/html; charset=UTF-8"%>
 <%
 	String cp = request.getContextPath();
 %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="EUC-KR" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Play | Open source Project by UIdeck</title>
@@ -177,20 +177,20 @@
                 Facing a challenge is kind of a turn-on for an easy rider
               </h2>
               <p class="ud-blog-details-para">
-                There??셲 a time and place for everything??? including asking for
+                There??占퐏 a time and place for everything??? including asking for
                 reviews. For instance: you should not asking for a review on
                 your checkout page. The sole purpose of this page is to guide
                 your customer to complete their purchase, and this means that
                 the page should be as minimalist and pared-down possible. You
-                don??셳 want to have any unnecessary elements or Call To Actions.
+                don??占퐐 want to have any unnecessary elements or Call To Actions.
               </p>
               <p class="ud-blog-details-para">
-                There??셲 a time and place for everything??? including asking for
+                There??占퐏 a time and place for everything??? including asking for
                 reviews. For instance: you should not asking for a review on
                 your checkout page. The sole purpose of this page is to guide
                 your customer to complete their purchase, and this means that
                 the page should be as minimalist and pared-down possible. You
-                don??셳 want to have any unnecessary elements or Call To Actions.
+                don??占퐐 want to have any unnecessary elements or Call To Actions.
               </p>
               <h3 class="ud-blog-details-subtitle">Sea no quidam vulputate</h3>
               <p class="ud-blog-details-para">
@@ -209,7 +209,7 @@
                   scatter the darkness of ignorance, and cause a light
                   heretofore unknown to shine amongst men.
                 </p>
-                <h6>??쏛ndrio Domeco???</h6>
+                <h6>??占폗ndrio Domeco???</h6>
               </div>
               <h3 class="ud-blog-details-subtitle">
                 What is it with your ideas?

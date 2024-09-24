@@ -5,7 +5,7 @@ request.setCharacterEncoding("UTF-8"); String cp = request.getContextPath(); %>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>°Ô ½Ã ÆÇ(SpringBoot-JSP)</title>
+    <title>ê²Œ ì‹œ íŒ(SpringBoot-JSP)</title>
 
     <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
     <link rel="stylesheet" type="text/css" href="resources/css/list.css" />
@@ -20,19 +20,19 @@ request.setCharacterEncoding("UTF-8"); String cp = request.getContextPath(); %>
   </head>
   <body>
     <div id="bbsList">
-      <div id="bbsList_title">°Ô ½Ã ÆÇ(SpringBoot-JSP)</div>
+      <div id="bbsList_title">ê²Œ ì‹œ íŒ(SpringBoot-JSP)</div>
       <div id="bbsList_header">
         <div id="leftHeader">
           <form action="" method="post" name="searchForm">
             <select name="searchKey" class="selectField">
-              <option value="subject">Á¦¸ñ</option>
-              <option value="name">ÀÛ¼ºÀÚ</option>
-              <option value="content">³»¿ë</option>
+              <option value="subject">ì œëª©</option>
+              <option value="name">ìž‘ì„±ìž</option>
+              <option value="content">ë‚´ìš©</option>
             </select>
             <input type="text" name="searchValue" class="textField" />
             <input
               type="button"
-              value=" °Ë »ö "
+              value=" ê²€ ìƒ‰ "
               class="btn2"
               onclick="sendIt();"
             />
@@ -41,7 +41,7 @@ request.setCharacterEncoding("UTF-8"); String cp = request.getContextPath(); %>
         <div id="rightHeader">
           <input
             type="button"
-            value=" ±Û¿Ã¸®±â "
+            value=" ê¸€ì˜¬ë¦¬ê¸° "
             class="btn2"
             onclick="javascript:location.href='<%=cp%>/created.action';"
           />
@@ -50,11 +50,11 @@ request.setCharacterEncoding("UTF-8"); String cp = request.getContextPath(); %>
       <div id="bbsList_list">
         <div id="title">
           <dl>
-            <dt class="num">¹øÈ£</dt>
-            <dt class="subject">Á¦¸ñ</dt>
-            <dt class="name">ÀÛ¼ºÀÚ</dt>
-            <dt class="created">ÀÛ¼ºÀÏ</dt>
-            <dt class="hitCount">Á¶È¸¼ö</dt>
+            <dt class="num">ë²ˆí˜¸</dt>
+            <dt class="subject">ì œëª©</dt>
+            <dt class="name">ìž‘ì„±ìž</dt>
+            <dt class="created">ìž‘ì„±ì¼</dt>
+            <dt class="hitCount">ì¡°íšŒìˆ˜</dt>
           </dl>
         </div>
         <div id="lists">
@@ -72,7 +72,7 @@ request.setCharacterEncoding("UTF-8"); String cp = request.getContextPath(); %>
         </div>
         <div id="footer">
           <c:if test="${dataCount != 0 }"> ${pageIndexList } </c:if>
-          <c:if test="${dataCount == 0 }"> µî·ÏµÈ °Ô½Ã¹°ÀÌ ¾ø½À´Ï´Ù. </c:if>
+          <c:if test="${dataCount == 0 }"> ë“±ë¡ëœ ê²Œì‹œë¬¼ì´ ì—†ìŠµë‹ˆë‹¤. </c:if>
         </div>
       </div>
     </div>

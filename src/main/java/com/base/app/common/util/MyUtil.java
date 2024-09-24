@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MyUtil {
 
-	//ÀüÃ¼ÆäÀÌÁö
+	//ì „ì²´í˜ì´ì§€
 	public int getPageCount(int numPerPage, int dataCount) {
 		
 		int pageCount = 0;
@@ -19,75 +19,75 @@ public class MyUtil {
 		return pageCount;
 	}
 	
-	//ÆäÀÌÁö Ã³¸® ¸Ş¼Òµå
+	//í˜ì´ì§€ ì²˜ë¦¬ ë©”ì†Œë“œ
 	public String pageIndexList(int currentPage, int totalPage, String listUrl) {
 		
-		int numPerBlock = 5; //¢¸ÀÌÀü 6 7 8 9 10 ´ÙÀ½¢º ÀÌÀü°ú ´ÙÀ½ »çÀÌÀÇ ÆäÀÌÁö Ç¥½Ã ¼ö.
-		int currentPageSetup; //¢¸¿¡ µé¾îÀÖ´Â °ª.
-		int page;	//6 7 8 9 10 ÆäÀÌÁö°ª. int i¿Í ºñ½ÁÇÏ´Ù.
+		int numPerBlock = 5; //â—€ì´ì „ 6 7 8 9 10 ë‹¤ìŒâ–¶ ì´ì „ê³¼ ë‹¤ìŒ ì‚¬ì´ì˜ í˜ì´ì§€ í‘œì‹œ ìˆ˜.
+		int currentPageSetup; //â—€ì— ë“¤ì–´ìˆëŠ” ê°’.
+		int page;	//6 7 8 9 10 í˜ì´ì§€ê°’. int iì™€ ë¹„ìŠ·í•˜ë‹¤.
 		
-		StringBuffer sb = new StringBuffer(); //StringÀ» µµ¿ÍÁÖ´Â º¸Á¶ ½ºÆ®¸µ¹öÆÛ¿Í ½ºÆ®¸µºô´õ°¡ ÀÖ´Ù.
+		StringBuffer sb = new StringBuffer(); //Stringì„ ë„ì™€ì£¼ëŠ” ë³´ì¡° ìŠ¤íŠ¸ë§ë²„í¼ì™€ ìŠ¤íŠ¸ë§ë¹Œë”ê°€ ìˆë‹¤.
 		
 		if(currentPage==0 || totalPage==0) {
 			return "";
 		}
 		
-		//list.jsp?pageNum=2 UrlÀÌ µÎ°³°¡ ¿Ã ¼ö ÀÖ´Ù. ÆäÀÌÂ¡ÀÛ¾÷.
+		//list.jsp?pageNum=2 Urlì´ ë‘ê°œê°€ ì˜¬ ìˆ˜ ìˆë‹¤. í˜ì´ì§•ì‘ì—….
 		//list.jsp?searchKey=subject&searchValue=a
-		if(listUrl.indexOf("?")!=-1	) { //listUrlÀÇ ÀÎµ¦½º°ªÁß¿¡ ? °¡ µé¾îÀÖ³ª È®ÀÎ.
-			listUrl = listUrl + "&"; //¸¸¾à ÀÖ´Ù¸é url¿¡ &¸¦ ´õÇØ¶ó
+		if(listUrl.indexOf("?")!=-1	) { //listUrlì˜ ì¸ë±ìŠ¤ê°’ì¤‘ì— ? ê°€ ë“¤ì–´ìˆë‚˜ í™•ì¸.
+			listUrl = listUrl + "&"; //ë§Œì•½ ìˆë‹¤ë©´ urlì— &ë¥¼ ë”í•´ë¼
 		}else {
-			listUrl = listUrl + "?"; //¾ø´Ù¸é Url¿¡ ?¸¦ ´õÇØ¶ó
+			listUrl = listUrl + "?"; //ì—†ë‹¤ë©´ Urlì— ?ë¥¼ ë”í•´ë¼
 		}
 		
-		 // 1 2 3 4 5 ´ÙÀ½¢º
-		 //¢¸ÀÌÀü 6 7 8 9 10 ´ÙÀ½¢º
-		 //¢¸ÀÌÀü 11 12 13 14 15 ´ÙÀ½¢º
-		//¢¸ ¸¸µé±â
-		currentPageSetup = (currentPage/numPerBlock)*numPerBlock; //6 / 5 ´Â 1¿¡ ³ª¸ÓÁö 1 ¿¡´Ù numPerblock°ª 5¸¦ ´õÇÏ¸é  5
+		 // 1 2 3 4 5 ë‹¤ìŒâ–¶
+		 //â—€ì´ì „ 6 7 8 9 10 ë‹¤ìŒâ–¶
+		 //â—€ì´ì „ 11 12 13 14 15 ë‹¤ìŒâ–¶
+		//â—€ ë§Œë“¤ê¸°
+		currentPageSetup = (currentPage/numPerBlock)*numPerBlock; //6 / 5 ëŠ” 1ì— ë‚˜ë¨¸ì§€ 1 ì—ë‹¤ numPerblockê°’ 5ë¥¼ ë”í•˜ë©´  5
 
-		if(currentPage % numPerBlock == 0) { //Ä¿·±Æ®ÆäÀÌÁö¸¦ ³ª´«°ªÀÌ 0À¸·Î µü ¶³¾îÁö¸é ¼Â¾÷-³ÑÆÛºí·Ï.
-			currentPageSetup = currentPageSetup - numPerBlock; //ÀÌÀüÆäÀÌÁö¸¦ ±¸ÇÏ´Â °ø½Ä
+		if(currentPage % numPerBlock == 0) { //ì»¤ëŸ°íŠ¸í˜ì´ì§€ë¥¼ ë‚˜ëˆˆê°’ì´ 0ìœ¼ë¡œ ë”± ë–¨ì–´ì§€ë©´ ì…‹ì—…-ë„˜í¼ë¸”ë¡.
+			currentPageSetup = currentPageSetup - numPerBlock; //ì´ì „í˜ì´ì§€ë¥¼ êµ¬í•˜ëŠ” ê³µì‹
 		}
 	
-		//¢¸ÀÌÀü <¸¸µé±â
-		if(totalPage > numPerBlock && currentPageSetup > 0) { //ÅäÅ»ÆäÀÌÁöº¸´Ù Å©°í ³ÑÆÛºí·ÏÀÌ³ª Ä¿·±Æ®ÆäÀÌÁö¼Â¾÷ÀÌ 0º¸´Ù Å©¸é ¸¸µé°í ÀÛÀ¸¸é ¾È¸¸µë
+		//â—€ì´ì „ <ë§Œë“¤ê¸°
+		if(totalPage > numPerBlock && currentPageSetup > 0) { //í† íƒˆí˜ì´ì§€ë³´ë‹¤ í¬ê³  ë„˜í¼ë¸”ë¡ì´ë‚˜ ì»¤ëŸ°íŠ¸í˜ì´ì§€ì…‹ì—…ì´ 0ë³´ë‹¤ í¬ë©´ ë§Œë“¤ê³  ì‘ìœ¼ë©´ ì•ˆë§Œë“¬
 			//
 			sb.append("<a href=\"" + listUrl + "pageNum=" + 
-			currentPageSetup + "\">¢¸ÀÌÀü</a>&nbsp;"); // \" ¿ª½½·¡½Ãµû¿ÈÇ¥´Â ´İ´Â µû¿ÈÇ¥·Î ÀÎ½ÄÇÏÁö¾Ê´Â´Ù.
+			currentPageSetup + "\">â—€ì´ì „</a>&nbsp;"); // \" ì—­ìŠ¬ë˜ì‹œë”°ì˜´í‘œëŠ” ë‹«ëŠ” ë”°ì˜´í‘œë¡œ ì¸ì‹í•˜ì§€ì•ŠëŠ”ë‹¤.
 			
-			//<a href="list.jsp?pageNum=5>¢¸ÀÌÀü</a>
+			//<a href="list.jsp?pageNum=5>â—€ì´ì „</a>
 		}
 		
-		//¹Ù·Î°¡±âÆäÀÌÁö 6 7 8 9 10
+		//ë°”ë¡œê°€ê¸°í˜ì´ì§€ 6 7 8 9 10
 		
 		page = currentPageSetup + 1;
 		
 		while(page <= totalPage && page <= (currentPageSetup + numPerBlock)) {
-			//ÆäÀÌÁö°¡ ÅäÅ»ÆäÀÌÁöº¸´Ù ÀÛ°Å³ª °°°í && ÆäÀÌÁö°¡ Ä¿·±Æ®ÆäÀÌÁö¼Â¾÷ + ³ÑÆÛºí·Ïº¸´Ù ÀÛ°Å³ª °°Àº°Ô ÂüÀÌ¸é
+			//í˜ì´ì§€ê°€ í† íƒˆí˜ì´ì§€ë³´ë‹¤ ì‘ê±°ë‚˜ ê°™ê³  && í˜ì´ì§€ê°€ ì»¤ëŸ°íŠ¸í˜ì´ì§€ì…‹ì—… + ë„˜í¼ë¸”ë¡ë³´ë‹¤ ì‘ê±°ë‚˜ ê°™ì€ê²Œ ì°¸ì´ë©´
 			
 			if(page == currentPage) {
 				sb.append("<font color=\"Fuchsia\">" + page + "</font>&nbsp;");
-				//<font color = "Fuchsia">9</font> ÇöÀç º¸°íÀÖ´Â ÆäÀÌÁö¿¡ »ö»óÀ» ÁØ°Í.
+				//<font color = "Fuchsia">9</font> í˜„ì¬ ë³´ê³ ìˆëŠ” í˜ì´ì§€ì— ìƒ‰ìƒì„ ì¤€ê²ƒ.
 				
 			}else {
 				
 				sb.append("<a href=\"" + listUrl + "pageNum=" + page + "\">" + page + "</a>&nbsp;");
 				
-				//<a href="list.jsp?pageNum=7">7</a>&nbsp; À§¿Í µ¿ÀÏ. ÇöÀçº¸°íÀÖ´Â ÆäÀÌÁö°¡ ¾Æ´Ñ ´Ù¸¥ÆäÀÌÁö¿¡ ¸µÅ©¸¦ÁØ°Í.
+				//<a href="list.jsp?pageNum=7">7</a>&nbsp; ìœ„ì™€ ë™ì¼. í˜„ì¬ë³´ê³ ìˆëŠ” í˜ì´ì§€ê°€ ì•„ë‹Œ ë‹¤ë¥¸í˜ì´ì§€ì— ë§í¬ë¥¼ì¤€ê²ƒ.
 			}
 			
-			page++; //++ÇØÁÖ¾î¾ß ¿ÍÀÏ¹®ÀÌ ÇÏ³ªÂï°í ´õÇÏ°í Âï°í ´õÇÏ°í ¹İº¹.
+			page++; //++í•´ì£¼ì–´ì•¼ ì™€ì¼ë¬¸ì´ í•˜ë‚˜ì°ê³  ë”í•˜ê³  ì°ê³  ë”í•˜ê³  ë°˜ë³µ.
 			
 		}
 		
-		//´ÙÀ½¢º
-		//¢¸ÀÌÀü 6 7 8 9 10 ´ÙÀ½¢º
-		//¢¸ÀÌÀü 11 12 13 14 15 ´ÙÀ½¢º
+		//ë‹¤ìŒâ–¶
+		//â—€ì´ì „ 6 7 8 9 10 ë‹¤ìŒâ–¶
+		//â—€ì´ì „ 11 12 13 14 15 ë‹¤ìŒâ–¶
 		if(totalPage - currentPageSetup > numPerBlock) {
 			
-			sb.append("<a href=\"" + listUrl + "pageNum=" + page + "\">´ÙÀ½¢º</a>&nbsp;");
-			//<a href="list.jsp?pageNum=11">´ÙÀ½¢º</a>&nbsp; À§¿Í µ¿ÀÏ.
+			sb.append("<a href=\"" + listUrl + "pageNum=" + page + "\">ë‹¤ìŒâ–¶</a>&nbsp;");
+			//<a href="list.jsp?pageNum=11">ë‹¤ìŒâ–¶</a>&nbsp; ìœ„ì™€ ë™ì¼.
 		}
 		
 		return sb.toString();

@@ -1,8 +1,8 @@
-<%@ page  contentType="text/html; charset=EUC-KR"%>
+<%@ page  contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
 <%
@@ -21,9 +21,9 @@
 <body>
 
 <h3>
-<a href="<%=cp %>/list.action">°Ô½ÃÆÇ</a>
-<a href="<%=cp %>/board.action">Æ÷ÅĞ</a>
-<a href="<%=cp %>/main.do">¸ŞÀÎ</a>
+<a href="<%=cp %>/list.action">ê²Œì‹œíŒ</a>
+<a href="<%=cp %>/board.action">í¬í„¸</a>
+<a href="<%=cp %>/main.do">ë©”ì¸</a>
 <a href="<%=cp %>/test.do">test</a>
 </h3>
 

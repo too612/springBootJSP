@@ -12,8 +12,8 @@ import lombok.RequiredArgsConstructor;
 
 /**
  * @Class Name  : ApiSendController.java
- * @Description : MIS ¹ß¼Û¿ë
- * @author		: ±è¼ºÈ£
+ * @Description : MIS ë°œì†¡ìš©
+ * @author		: ê¹€ì„±í˜¸
  * @since		: 2024.05.27
  * @version		: 1.0
  * @see
@@ -21,9 +21,9 @@ import lombok.RequiredArgsConstructor;
  * <pre>
  * << Modification Information >>
  *
- *    ¼öÁ¤ÀÏ            ¼öÁ¤ÀÚ          ¼öÁ¤³»¿ë
+ *    ìˆ˜ì •ì¼            ìˆ˜ì •ì          ìˆ˜ì •ë‚´ìš©
  *  ----------  --------  ---------------------------
- *  2024.05.27   ±è¼ºÈ£          ÃÖÃÊ »ı¼º
+ *  2024.05.27   ê¹€ì„±í˜¸          ìµœì´ˆ ìƒì„±
  */
 @Controller
 @RequiredArgsConstructor
@@ -32,7 +32,7 @@ public class ApiSendController {
 	private final ApiSendService apiSendService;
 
 	/**
-	 * API ¿äÃ»
+	 * API ìš”ì²­
 	 * @param HttpServletRequest param : parameter
 	 * @return String
 	 */

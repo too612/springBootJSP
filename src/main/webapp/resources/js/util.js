@@ -1,27 +1,27 @@
-// ³»¿ëÀÇ °ªÀÇ ºó°ø¹éÀ» trim(¾Õ/µÚ)
+// ë‚´ìš©ì˜ ê°’ì˜ ë¹ˆê³µë°±ì„ trim(ì•/ë’¤)
 String.prototype.trim = function() {
   var TRIM_PATTERN = /(^\s*)|(\s*$)/g;
   return this.replace(TRIM_PATTERN, "");
 };
 
-// E-Mail °Ë»ç
+// E-Mail ê²€ì‚¬
 function isValidEmail(email) {
 var format = /^((\w|[\-\.])+)@((\w|[\-\.])+)\.([A-Za-z]+)$/;
   if (email.search(format) != -1)
-      return true; //¿Ã¹Ù¸¥ Æ÷¸Ë Çü½Ä
+      return true; //ì˜¬ë°”ë¥¸ í¬ë§· í˜•ì‹
   return false;
 }
 
-// ÇÑ±Û ÇÊÅÍ¸µ
+// í•œê¸€ í•„í„°ë§
 function isValidKorean(data){
-   // UTF-8 ÄÚµå Áß AC00ºÎÅÍ D7A3 °ªÀÌÁö °Ë»ç
+   // UTF-8 ì½”ë“œ ì¤‘ AC00ë¶€í„° D7A3 ê°’ì´ì§€ ê²€ì‚¬
 var format = /^[\uac00-\ud7a3]*$/g;
   if (data.search(format) != -1)
-      return true; //¿Ã¹Ù¸¥ Æ÷¸Ë Çü½Ä
+      return true; //ì˜¬ë°”ë¥¸ í¬ë§· í˜•ì‹
   return false;
 }
 
-// ³¯Â¥ °Ë»ç
+// ë‚ ì§œ ê²€ì‚¬
 function isValidDate(year, month, day) {
 var days = new Array (31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
 

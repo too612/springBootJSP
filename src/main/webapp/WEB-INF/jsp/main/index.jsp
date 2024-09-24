@@ -7,7 +7,7 @@
 	Version: 1.1
 
 ========== -->
-<%@ page contentType="text/html; charset=EUC-KR" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%
   String cp=request.getContextPath(); 
 %>
@@ -15,7 +15,7 @@
     <html lang="en">
 
     <head>
-      <meta charset="EUC-KR" />
+      <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Play | Free Startup and SaaS Landing Page Template by UIdeck</title>
@@ -189,14 +189,14 @@
                 <span class="tag">About Us</span>
                 <h2>Brilliant Toolkit to Build Nextgen Website Faster.</h2>
                 <p>
-                  The main ??쁳hrust??? is to focus on educating attendees on how to
+                  The main ??占퐐hrust??? is to focus on educating attendees on how to
                   best protect highly vulnerable business applications with
                   interactive panel discussions and roundtables led by subject
                   matter experts.
                 </p>
 
                 <p>
-                  The main ??쁳hrust??? is to focus on educating attendees on how to
+                  The main ??占퐐hrust??? is to focus on educating attendees on how to
                   best protect highly vulnerable business applications with
                   interactive panel.
                 </p>
@@ -474,7 +474,7 @@
                 </div>
                 <div class="ud-testimonial-content">
                   <p>
-                    ??쏰ur members are so impressed. It's intuitive. It's clean.
+                    ??占폨ur members are so impressed. It's intuitive. It's clean.
                     It's distraction free. If you're building a community.
                   </p>
                 </div>
@@ -500,7 +500,7 @@
                 </div>
                 <div class="ud-testimonial-content">
                   <p>
-                    ??쏰ur members are so impressed. It's intuitive. It's clean.
+                    ??占폨ur members are so impressed. It's intuitive. It's clean.
                     It's distraction free. If you're building a community.
                   </p>
                 </div>
@@ -526,7 +526,7 @@
                 </div>
                 <div class="ud-testimonial-content">
                   <p>
-                    ??쏰ur members are so impressed. It's intuitive. It's clean.
+                    ??占폨ur members are so impressed. It's intuitive. It's clean.
                     It's distraction free. If you're building a community.
                   </p>
                 </div>
@@ -735,7 +735,7 @@
                 <div class="ud-contact-title">
                   <span>CONTACT US</span>
                   <h2>
-                    Let??셲 talk about <br />
+                    Let??占퐏 talk about <br />
                     Love to hear from you!
                   </h2>
                 </div>

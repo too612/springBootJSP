@@ -24,8 +24,8 @@ import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * @Class Name  : ApiReceiveServiceImpl.java
- * @Description : MIS ¼ö½Å¿ë
- * @author		: ±è¼ºÈ£
+ * @Description : MIS ìˆ˜ì‹ ìš©
+ * @author		: ê¹€ì„±í˜¸
  * @since		: 2024.05.27
  * @version		: 1.0
  * @see
@@ -33,9 +33,9 @@ import jakarta.servlet.http.HttpServletRequest;
  * <pre>
  * << Modification Information >>
  *
- *    ¼öÁ¤ÀÏ            ¼öÁ¤ÀÚ          ¼öÁ¤³»¿ë
+ *    ìˆ˜ì •ì¼            ìˆ˜ì •ì          ìˆ˜ì •ë‚´ìš©
  *  ----------  --------  ---------------------------
- *  2024.05.27   ±è¼ºÈ£          ÃÖÃÊ »ı¼º
+ *  2024.05.27   ê¹€ì„±í˜¸          ìµœì´ˆ ìƒì„±
  */
 @Service("common.api.service.ApiReceiveService")
 public class ApiReceiveServiceImpl implements ApiReceiveService{
@@ -43,7 +43,7 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 	//private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 	
 	/**
-	 * API ¿äÃ»ÀÌ µé¾î¿Ã °æ¿ì °á°ú°ª ¹İÈ¯
+	 * API ìš”ì²­ì´ ë“¤ì–´ì˜¬ ê²½ìš° ê²°ê³¼ê°’ ë°˜í™˜
 	 * @param HttpServletRequest param : parameter
 	 * @return String
 	 */
@@ -67,9 +67,9 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 		JSONObject fullJSONObject = new JSONObject(new TreeMap());
 		
 		try {
-			// ÀÎ»çÁ¤º¸ ½ºÅ°¸¶ 
+			// ì¸ì‚¬ì •ë³´ ìŠ¤í‚¤ë§ˆ 
 			if ("USR".equals(String.valueOf(jObject.get("SCH_API_TYPE")))) {
-				// °Ë»öÁ¶°Ç
+				// ê²€ìƒ‰ì¡°ê±´
 				sMap.put("SCH_EMP_NO", nullToString(String.valueOf(jObject.get("SCH_IDENTIFT_KEY"))));
 				sMap.put("SCH_JOB_POST_NM", nullToString(String.valueOf(jObject.get("SCH_USER_PERSG"))));
 				sMap.put("SCH_EMP_NM", nullToString(String.valueOf(jObject.get("SCH_USER_NAME"))));
@@ -80,9 +80,9 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 				sMap.put("SCH_SEX_DIST", nullToString(String.valueOf(jObject.get("SCH_USER_GENDER"))));
 				
 				//list =	dao.list("mis.pur.PurReceiveAPI.UsrList", sMap);
-			// ºÎ¼­Á¤º¸ ½ºÅ°¸¶
+			// ë¶€ì„œì •ë³´ ìŠ¤í‚¤ë§ˆ
 			} else if ("DPT".equals(String.valueOf(jObject.get("SCH_API_TYPE")))) {
-				// °Ë»öÁ¶°Ç
+				// ê²€ìƒ‰ì¡°ê±´
 				sMap.put("SCH_DEPT_CD", nullToString(String.valueOf(jObject.get("SCH_GROUP_CODE"))));
 				sMap.put("SCH_DEPT_NM", nullToString(String.valueOf(jObject.get("SCH_GROUP_NAME"))));
 				sMap.put("SCH_UP_DEPT_CD", nullToString(String.valueOf(jObject.get("SCH_GROUP_CODE_UP"))));
@@ -90,9 +90,9 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 				sMap.put("SCH_ORD_NO", nullToString(String.valueOf(jObject.get("SCH_GROUP_ORDER"))));
 				
 				//list =	dao.list("mis.pur.PurReceiveAPI.DptList", sMap);
-			// °ø»çÁ¤º¸ ½ºÅ°¸¶
+			// ê³µì‚¬ì •ë³´ ìŠ¤í‚¤ë§ˆ
 			} else if ("CST".equals(String.valueOf(jObject.get("SCH_API_TYPE")))) {
-				// °Ë»öÁ¶°Ç
+				// ê²€ìƒ‰ì¡°ê±´
 				sMap.put("SCH_BIZR_NO", nullToString(String.valueOf(jObject.get("SCH_BUSINESS_NUM"))));
 				sMap.put("SCH_RQST_NO", nullToString(String.valueOf(jObject.get("SCH_ORDER_NO"))));
 				sMap.put("SCH_RQST_EMP_NO", nullToString(String.valueOf(jObject.get("SCH_IDENTIFT_KEY"))));
@@ -103,9 +103,9 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 				sMap.put("SCH_EVL_DMND_YN", nullToString(String.valueOf(jObject.get("SCH_IS_SH_LEVEL"))));
 				
 				//list =	dao.list("mis.pur.PurReceiveAPI.CstList", sMap);
-			// ¾÷Ã¼Á¤º¸ ½ºÅ°¸¶
+			// ì—…ì²´ì •ë³´ ìŠ¤í‚¤ë§ˆ
 			} else if ("COP".equals(String.valueOf(jObject.get("SCH_API_TYPE")))) {
-				// °Ë»öÁ¶°Ç
+				// ê²€ìƒ‰ì¡°ê±´
 				sMap.put("SCH_CTRCT_NO", nullToString(String.valueOf(jObject.get("SCH_ORDER_NO"))));
 				sMap.put("SCH_BIZR_NO", nullToString(String.valueOf(jObject.get("SCH_BUSINESS_NUM"))));
 				sMap.put("SCH_CTRCT_CUST_NM", nullToString(String.valueOf(jObject.get("SCH_COMPANY_NANE"))));
@@ -114,9 +114,9 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 				sMap.put("SCH_CTRCT_CUST_TEL_NO", nullToString(String.valueOf(jObject.get("SCH_COMPANY_PHONE"))));
 				
 				//list =	dao.list("mis.pur.PurReceiveAPI.CopList", sMap);
-			// È­ÇĞ¹°Áú ½ºÅ°¸¶
+			// í™”í•™ë¬¼ì§ˆ ìŠ¤í‚¤ë§ˆ
 			} else if ("CMS".equals(String.valueOf(jObject.get("SCH_API_TYPE")))) {
-				// °Ë»öÁ¶°Ç
+				// ê²€ìƒ‰ì¡°ê±´
 				sMap.put("SCH_RQST_NO", nullToString(String.valueOf(jObject.get("SCH_ORDER_NO"))));
 				sMap.put("SCH_CMS_NO", nullToString(String.valueOf(jObject.get("SCH_CMS_NO"))));
 				sMap.put("SCH_LMS_NO", nullToString(String.valueOf(jObject.get("SCH_LMS_NO"))));
@@ -137,15 +137,15 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 				fullJSONObject.put("head", headData);
 				fullJSONObject.put("body", bodyData);
 				
-				// Base64->byte·Î º¯°æ
+				// Base64->byteë¡œ ë³€ê²½
 				//byte[] decode =Base64.decodeBase64(String.valueOf(sMap.get("FILE_BLOB")).getBytes());
 				
-				// ÁöÁ¤µÈ °æ·Î·Î ÆÄÀÏÀ» ÀúÀå
+				// ì§€ì •ëœ ê²½ë¡œë¡œ íŒŒì¼ì„ ì €ì¥
 				//Files.write(Paths.get("C:\\Users\\msi\\Desktop\\test2.pdf"), decode);
 			
 			}
 			
-			// ÆÄÀÏ°ü·Ã ºÎºĞÀ» Á¦¿ÜÇÏ°í json Çü½Ä ÅëÀÏ
+			// íŒŒì¼ê´€ë ¨ ë¶€ë¶„ì„ ì œì™¸í•˜ê³  json í˜•ì‹ í†µì¼
 			if (!"FILE".equals(String.valueOf(jObject.get("SCH_API_TYPE")))) {
 				headData.put("code", "200");
 				headData.put("mesg", "Successful");
@@ -179,7 +179,7 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 	}
 	
 	/**
-	 * JSON -> MAP º¯È¯
+	 * JSON -> MAP ë³€í™˜
 	 * @param HttpServletRequest param : parameter
 	 * @return String
 	 */
@@ -197,7 +197,7 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 	}
 	
 	/**
-	 * JSON -> LIST º¯È¯
+	 * JSON -> LIST ë³€í™˜
 	 * @param HttpServletRequest param : parameter
 	 * @return String
 	 */
@@ -226,7 +226,7 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 	}
 
 	/**
-	 * JsonArray°ªÀ» List·Î Çüº¯È¯ÇÏ±â
+	 * JsonArrayê°’ì„ Listë¡œ í˜•ë³€í™˜í•˜ê¸°
 	 * @param request
 	 * @return
 	 * @throws Exception
@@ -234,7 +234,7 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 	private List<Map<String, Object>> separateListFrmJSONArrayToList (JSONArray jSongArray) throws ParseException{
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		
-		for(int i = 0; i < jSongArray.size(); i++){   //°¡Á®¿Â hashmap µ¥ÀÌÅÍÀÇ °¹¼ö¸¸Å­ ¹İº¹
+		for(int i = 0; i < jSongArray.size(); i++){   //ê°€ì ¸ì˜¨ hashmap ë°ì´í„°ì˜ ê°¯ìˆ˜ë§Œí¼ ë°˜ë³µ
 			Map<String, Object> map = getMapFromJsonObject((JSONObject)jSongArray.get(i));
 			
 			list.add(map);
@@ -243,7 +243,7 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 	}
 	
 	/**
-	 * JsonObject°ªÀ» MapÀ¸·Î Çüº¯È¯ÇÏ±â
+	 * JsonObjectê°’ì„ Mapìœ¼ë¡œ í˜•ë³€í™˜í•˜ê¸°
 	 * @param request
 	 * @return
 	 * @throws Exception
@@ -264,7 +264,7 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 	
 	
 	/**
-	 * HttpServletRequest mapÀ¸·Î º¯È¯
+	 * HttpServletRequest mapìœ¼ë¡œ ë³€í™˜
 	 * @param InputStream in : InputStream
 	 * @return hmap
 	 */
@@ -285,7 +285,7 @@ public class ApiReceiveServiceImpl implements ApiReceiveService{
 	}
 	
 	/**
-	 * null°ª Ä¡È¯
+	 * nullê°’ ì¹˜í™˜
 	 * @param String str : String
 	 * @return String
 	 */

@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 
 
 /**
- * °øÅë Utility Å¬·¡½º.
+ * ê³µí†µ Utility í´ë˜ìŠ¤.
  *
  * @author
  */
@@ -20,7 +20,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * paramter°¡ NullÀÏ °æ¿ì ¹®ÀÚ¿­ (°ø¹é¹®ÀÚ)¸¦ ¸®ÅÏ
+	 * paramterê°€ Nullì¼ ê²½ìš° ë¬¸ìì—´ (ê³µë°±ë¬¸ì)ë¥¼ ë¦¬í„´
 	 */
 	public static String nullToString(Object str) {
 		//return (str == null) ?"": nullToString((String)str);
@@ -29,11 +29,11 @@ public class GeneralUtil {
 
 	/**
 	 * <pre>
-	 * °´Ã¼°¡ nullÀÎ °æ¿ì 'null'¹®ÀÚ¿­·Î Ãâ·ÂµÇ´Â °äÀ» ¹æÁöÇÏ±â À§ÇØ "" º¯È¯ ÇÏ¸ç ³Ñ°Ü¿Â ¹®ÀÚ¿­·Î º¯°æÇÏ¿© ¹İÈ¯
+	 * ê°ì²´ê°€ nullì¸ ê²½ìš° 'null'ë¬¸ìì—´ë¡œ ì¶œë ¥ë˜ëŠ” ê²»ì„ ë°©ì§€í•˜ê¸° ìœ„í•´ "" ë³€í™˜ í•˜ë©° ë„˜ê²¨ì˜¨ ë¬¸ìì—´ë¡œ ë³€ê²½í•˜ì—¬ ë°˜í™˜
 	 * </pre>
-	 * @param Object   Ãâ·Â´ë»ó °´Ã¼
-	 * @param str	¹Ù²Ü¹®ÀÚ¿­
-	 * @return String  ÇØ´ç °´Ã¼¿¡ ´ëÇÑ ¹®ÀÚ¿­ Ç¥½Ã
+	 * @param Object   ì¶œë ¥ëŒ€ìƒ ê°ì²´
+	 * @param str	ë°”ê¿€ë¬¸ìì—´
+	 * @return String  í•´ë‹¹ ê°ì²´ì— ëŒ€í•œ ë¬¸ìì—´ í‘œì‹œ
 	 */
 	public static String nullToString(Object o, String str) {
 		if (o == null)
@@ -44,33 +44,33 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * paramter°¡ NullÀÏ °æ¿ì ¹®ÀÚ¿­ (°ø¹é¹®ÀÚ)¸¦ ¸®ÅÏ
+	 * paramterê°€ Nullì¼ ê²½ìš° ë¬¸ìì—´ (ê³µë°±ë¬¸ì)ë¥¼ ë¦¬í„´
 	 */
 	public static String nullToString(String str) {
 		return (str == null) ? "" : str.trim();
 	}
 
 	/**
-	 * paramter°¡ NullÀÏ °æ¿ì ¹®ÀÚ¿­ (°ø¹é¹®ÀÚ)¸¦ ¸®ÅÏ
+	 * paramterê°€ Nullì¼ ê²½ìš° ë¬¸ìì—´ (ê³µë°±ë¬¸ì)ë¥¼ ë¦¬í„´
 	 */
 	public static String nullToString2(String str) {
 		return (str == null) ? "" : str;
 	}
 
 	/**
-	 * paramter°¡ NullÀÏ °æ¿ì ¹®ÀÚ¿­ "&nbsp;"À» ¸®ÅÏ
+	 * paramterê°€ Nullì¼ ê²½ìš° ë¬¸ìì—´ "&nbsp;"ì„ ë¦¬í„´
 	 */
 	public static String nullToHtml(String str) {
 		return (str == null) ? "&nbsp;" : str;
 	}
 
 	/**
-	 * getMapÀÇ data NullÀÏ °æ¿ì ÁöÁ¤µÈ °ªÀ¸·Î put
+	 * getMapì˜ data Nullì¼ ê²½ìš° ì§€ì •ëœ ê°’ìœ¼ë¡œ put
 	 *
 	 * @param map
 	 * @param str
 	 * @param var
-	 * @author ¹®´öÂù
+	 * @author ë¬¸ë•ì°¬
 	 */
 	public static void nullToValue(Map<String, Object> map, String str, String var) {
 		if (map.get(str) == null) {
@@ -79,13 +79,13 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * paramter°¡ Null, ºó°ªÀÏ °æ¿ì ÁöÁ¤µÈ °ªÀ¸·Î ¸®ÅÏ
+	 * paramterê°€ Null, ë¹ˆê°’ì¼ ê²½ìš° ì§€ì •ëœ ê°’ìœ¼ë¡œ ë¦¬í„´
 	 *
 	 * @param request
 	 * @param str
 	 * @param var
 	 * @return
-	 * @author ¹®´öÂù
+	 * @author ë¬¸ë•ì°¬
 	 */
 	public static String nullChkData(HttpServletRequest req, String str, String var) {
 		if (req.getParameter(str) != null && !req.getParameter(str).equals("")) {
@@ -96,7 +96,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * StringÀ» int·Î º¯È¯
+	 * Stringì„ intë¡œ ë³€í™˜
 	 *
 	 * @param String
 	 *            str
@@ -110,7 +110,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * StringÀ» long·Î º¯È¯
+	 * Stringì„ longë¡œ ë³€í™˜
 	 *
 	 * @param String
 	 *            str
@@ -124,7 +124,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * StringÀ» float·Î º¯È¯
+	 * Stringì„ floatë¡œ ë³€í™˜
 	 *
 	 * @param String
 	 *            str
@@ -138,7 +138,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * StringÀ» double·Î º¯È¯
+	 * Stringì„ doubleë¡œ ë³€í™˜
 	 *
 	 * @param String
 	 *            str
@@ -152,8 +152,8 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * paramter°¡ NullÀÏ °æ¿ì ¹®ÀÚ¿­ (°ø¹é¹®ÀÚ)¸¦ ¸®ÅÏ
-	 * Æ¯Á¤Æ¯¼ö¹®ÀÚ ¼öÁ¤
+	 * paramterê°€ Nullì¼ ê²½ìš° ë¬¸ìì—´ (ê³µë°±ë¬¸ì)ë¥¼ ë¦¬í„´
+	 * íŠ¹ì •íŠ¹ìˆ˜ë¬¸ì ìˆ˜ì •
 	 */
 	public static String specialFilter(Object str) {
 		String value = nullToString(str);
@@ -168,7 +168,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * ÆÄÀÏ¸í return
+	 * íŒŒì¼ëª… return
 	 *
 	 * @param String
 	 *            str
@@ -188,7 +188,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	* data1°ú data2°ªÀ» ºñ±³ÇÑ´Ù. data1ÀÌ data2¿Í °°À» ½Ã¿¡´Â "seleted" ¹®ÀÚ¸¦ returnÇÑ´Ù.
+	* data1ê³¼ data2ê°’ì„ ë¹„êµí•œë‹¤. data1ì´ data2ì™€ ê°™ì„ ì‹œì—ëŠ” "seleted" ë¬¸ìë¥¼ returní•œë‹¤.
 	* @param String
 	* @param String
 	* @return String
@@ -204,9 +204,9 @@ public class GeneralUtil {
 	}
 
 	/**
-	* ÆÄÀÏ»èÁ¦
-	* @param String : µğ·ºÅä¸®¸í
-	* @param String : ÆÄÀÏ¸í
+	* íŒŒì¼ì‚­ì œ
+	* @param String : ë””ë ‰í† ë¦¬ëª…
+	* @param String : íŒŒì¼ëª…
 	*/
 	public static void delFile(String sDir, String sFileNm) {
 		java.io.File fileNm = new java.io.File(sDir, sFileNm);
@@ -214,7 +214,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	* data1°ú data2°ªÀ» ºñ±³ÇÑ´Ù. data1ÀÌ data2¿Í °°À» ½Ã¿¡´Â "checked" ¹®ÀÚ¸¦ returnÇÑ´Ù.
+	* data1ê³¼ data2ê°’ì„ ë¹„êµí•œë‹¤. data1ì´ data2ì™€ ê°™ì„ ì‹œì—ëŠ” "checked" ë¬¸ìë¥¼ returní•œë‹¤.
 	* @param String
 	* @param String
 	* @return String
@@ -230,7 +230,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	* ÁÖ¹Î¹øÈ£ format(000000-0000000)
+	* ì£¼ë¯¼ë²ˆí˜¸ format(000000-0000000)
 	* @return  String
 	* @param data
 	* @return  String
@@ -246,7 +246,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	* ÁÖ¹Î¹øÈ£ format(000000-0******)
+	* ì£¼ë¯¼ë²ˆí˜¸ format(000000-0******)
 	* @return  String
 	* @param data
 	* @return  String
@@ -262,7 +262,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	* ¿ìÆí¹øÈ£ format(000-000)
+	* ìš°í¸ë²ˆí˜¸ format(000-000)
 	* @return  String
 	* @param data
 	* @return  String
@@ -278,7 +278,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	* ³¯Â¥ format(0000-00-00)
+	* ë‚ ì§œ format(0000-00-00)
 	* @return  String
 	* @param data
 	* @return  String
@@ -294,7 +294,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	* ³¯Â¥ format remove(0000000000000)
+	* ë‚ ì§œ format remove(0000000000000)
 	* @param data
 	* @return  String
 	*/
@@ -312,7 +312,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	* ÁÖ¹Î¹øÈ£ format remove(0000000000000)
+	* ì£¼ë¯¼ë²ˆí˜¸ format remove(0000000000000)
 	* @param data
 	* @return  String
 	*/
@@ -328,7 +328,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	* ¿ìÆí¹øÈ£ format remove(000000)
+	* ìš°í¸ë²ˆí˜¸ format remove(000000)
 	* @param data
 	* @return  String
 	*/
@@ -344,7 +344,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	* ±ÛÀÚ ÁÙÀÓ
+	* ê¸€ì ì¤„ì„
 	* @param string
 	* @param int
 	* @return  String
@@ -371,7 +371,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	* ´Ş·Â »ö»ó ¼³Á¤
+	* ë‹¬ë ¥ ìƒ‰ìƒ ì„¤ì •
 	* @param Calendar cal :
 	* @param Calendar cur :
 	* @return  String
@@ -389,8 +389,8 @@ public class GeneralUtil {
 
 	/**
 	* keyWordPoint
-	* @param String data : ´ë»ó
-	* @param String strKeyWord : °Ë»ö¾î
+	* @param String data : ëŒ€ìƒ
+	* @param String strKeyWord : ê²€ìƒ‰ì–´
 	* @return  String
 	*/
 	public static String keyWordPoint(String data, String strKeyWord) {
@@ -452,7 +452,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * nullÀ» °ø¹éÀ¸·Î Ä¡È¯
+	 * nullì„ ê³µë°±ìœ¼ë¡œ ì¹˜í™˜
 	 * @param param
 	 * @return
 	 */
@@ -481,7 +481,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * Àü°¢¹®ÀÚ¸¦ ¹İ°¢¹®ÀÚ·Î º¯È¯
+	 * ì „ê°ë¬¸ìë¥¼ ë°˜ê°ë¬¸ìë¡œ ë³€í™˜
 	 * @param src
 	 * @return
 	 */
@@ -490,10 +490,10 @@ public class GeneralUtil {
 		char c = 0;
 		for (int i = 0; i < src.length(); i++) {
 			c = src.charAt(i);
-			//¿µ¹®ÀÌ°Å³ª Æ¯¼ö ¹®ÀÚ ÀÏ°æ¿ì.
+			//ì˜ë¬¸ì´ê±°ë‚˜ íŠ¹ìˆ˜ ë¬¸ì ì¼ê²½ìš°.
 			if (c >= '!' && c <= '~')
 				c -= 0xfee0;
-			// °ø¹é
+			// ê³µë°±
 			else if (c == ' ')
 				c = 0x20;
 			strBuf.append(c);
@@ -502,7 +502,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * ¹İ°¢¹®ÀÚ¸¦ Àü°¢¹®ÀÚ·Î º¯È¯ÇÏ±â
+	 * ë°˜ê°ë¬¸ìë¥¼ ì „ê°ë¬¸ìë¡œ ë³€í™˜í•˜ê¸°
 	 * @param src
 	 * @return
 	 */
@@ -513,10 +513,10 @@ public class GeneralUtil {
 		char c = 0;
 		for (int i = 0; i < src.length(); i++) {
 			c = src.charAt(i);
-			// ¿µ¹® ¾ËÆÄºª ÀÌ°Å³ª Æ¯¼ö ¹®ÀÚ
+			// ì˜ë¬¸ ì•ŒíŒŒë²³ ì´ê±°ë‚˜ íŠ¹ìˆ˜ ë¬¸ì
 			if (c >= 0x21 && c <= 0x7e)
 				c += 0xfee0;
-			// °ø¹é
+			// ê³µë°±
 			else if (c == 0x20)
 				c = 0x3000;
 			strBuf.append(c);
@@ -525,7 +525,7 @@ public class GeneralUtil {
 	}
 
 	/**
-	 * ¹®ÀÚ¿­ hexÃ³¸®
+	 * ë¬¸ìì—´ hexì²˜ë¦¬
 	 * @Method Name : stringToHex
 	 * @Description :
 	 * @param s

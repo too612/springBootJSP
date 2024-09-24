@@ -19,14 +19,14 @@ import com.base.app.main.data.dto.MainDTO;
 import com.base.app.main.data.mapper.MainMapper;
 import com.base.app.main.service.MainService;
 
-//MainService ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ Å¬·¡½º
-@Service // °´Ã¼ »ı¼º
+//MainService ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ í´ë˜ìŠ¤
+@Service // ê°ì²´ ìƒì„±
 public class MainServiceImpl implements MainService {
 
-	@Autowired // MainMapper¿¡ ÀÖ´Â sql¹®À» MainServiceImpl·Î ÀĞ¾î¿Í¼­ ÀÇÁ¸¼ºÁÖÀÔÇÏ¿© °´Ã¼»ı¼º ÇÑ°Í.
-	private MainMapper mainMapper; // MainMapper ÀÇÁ¸¼º ÁÖÀÔ
+	@Autowired // MainMapperì— ìˆëŠ” sqlë¬¸ì„ MainServiceImplë¡œ ì½ì–´ì™€ì„œ ì˜ì¡´ì„±ì£¼ì…í•˜ì—¬ ê°ì²´ìƒì„± í•œê²ƒ.
+	private MainMapper mainMapper; // MainMapper ì˜ì¡´ì„± ì£¼ì…
 
-	// °æ·Î : MainController -> MainService(I) -> MainServiceImpl(C) ->
+	// ê²½ë¡œ : MainController -> MainService(I) -> MainServiceImpl(C) ->
 	// MainMapper(I) -> MainMapper.xml
 
 	@Override
@@ -78,7 +78,7 @@ public class MainServiceImpl implements MainService {
 			StringBuilder urlBuilder = new StringBuilder("http://api.odcloud.kr/api/15077586/v1/centers"); /*URL*/
 			urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=SFJXw8594jTUvCqXeYftokgCI0Bz8gS3%2FdAYN7gnv0atIE%2BJJwZyqQZczX2z6rSGhGsgHeMO7bfc5Oe6v2MN5Q%3D%3D"); /*Service Key*/
 			urlBuilder.append("&" + URLEncoder.encode("page","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*YYYYMMDD*/
-			urlBuilder.append("&" + URLEncoder.encode("perPage","UTF-8") + "=" + URLEncoder.encode("10", "UTF-8")); /*ÆäÀÌÁö´ç ¸ñ·Ï ¼ö*/
+			urlBuilder.append("&" + URLEncoder.encode("perPage","UTF-8") + "=" + URLEncoder.encode("10", "UTF-8")); /*í˜ì´ì§€ë‹¹ ëª©ë¡ ìˆ˜*/
 
 			URL url = new URL(urlBuilder.toString());
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -102,9 +102,9 @@ public class MainServiceImpl implements MainService {
 
 			result = sb.toString();
 
-			// 1. ¹®ÀÚ¿­ ÇüÅÂÀÇ JSONÀ» ÆÄ½ÌÇÏ±â À§ÇÑ JSONParser °´Ã¼ »ı¼º.
+			// 1. ë¬¸ìì—´ í˜•íƒœì˜ JSONì„ íŒŒì‹±í•˜ê¸° ìœ„í•œ JSONParser ê°ì²´ ìƒì„±.
 			JSONParser parser = new JSONParser();
-			// 2. ¹®ÀÚ¿­À» JSON ÇüÅÂ·Î JSONObject °´Ã¼¿¡ ÀúÀå.
+			// 2. ë¬¸ìì—´ì„ JSON í˜•íƒœë¡œ JSONObject ê°ì²´ì— ì €ì¥.
 			JSONObject obj = (JSONObject)parser.parse(result);
 /*
 			JSONObject responseResult = (JSONObject)obj.get("data");

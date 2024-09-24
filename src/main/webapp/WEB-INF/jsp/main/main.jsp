@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <%@ include file= "../include/header.jsp" %>
 <head>
     
-    <meta http-equiv="content-type" content="text/html; charset=EUC-KR" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>HTML !DOCTYPE declaration</title>
 </head>
 <script>
@@ -12,21 +12,21 @@
 
     $(function() {
 			
-        // √Î«’
+        // Ï∑®Ìï©
         $('#test').click(function(){
             var test = fn_callTest();
-            alert("∞·∞˙∞™->" + test);
+            alert("Í≤∞Í≥ºÍ∞í->" + test);
         });
         // api
         $('#call').click(function(){
             var test = fn_callAPI();
-            alert("∞·∞˙∞™->" + test);
+            alert("Í≤∞Í≥ºÍ∞í->" + test);
         });
     });
 
     /*
     * Function Name : fn_callTest
-    * Description   : ∞À≈‰¿«∞ﬂ ∞°¡Æø¿±‚
+    * Description   : Í≤ÄÌÜ†ÏùòÍ≤¨ Í∞ÄÏ†∏Ïò§Í∏∞
     * param		 : N/A
     */
 function fn_callTest(){
@@ -124,9 +124,9 @@ function fn_callTest(){
 </script>
 <body>
     <!-- https://boomrabbit.tistory.com/245 -->
-    <!-- ∆‰¿Ã¡ˆ º“∞≥, ∞Àªˆ, ¡¶∏Ò ∑Œ∞Ì µÓ-->
+    <!-- ÌéòÏù¥ÏßÄ ÏÜåÍ∞ú, Í≤ÄÏÉâ, Ï†úÎ™© Î°úÍ≥† Îì±-->
     <header>
-        <!-- ≥◊∫Ò∞‘¿Ãº«πŸ¥¬ ¡÷∑Œ header æ»ø° ±∏º∫«—¥Ÿ.-->
+        <!-- ÎÑ§ÎπÑÍ≤åÏù¥ÏÖòÎ∞îÎäî Ï£ºÎ°ú header ÏïàÏóê Íµ¨ÏÑ±ÌïúÎã§.-->
         <nav class="navbar">
             <div class="navbar__logo">
               <i class="fas fa-blog"></i>
@@ -151,7 +151,7 @@ function fn_callTest(){
               </a>
         </nav>
     </header>
-    <!-- body¿« «ŸΩ…≥ªøÎ, «ŸΩ…¡÷¡¶ / »Æ¿Â«œ¥¬ ƒ‹≈Ÿ√˜ -->
+    <!-- bodyÏùò ÌïµÏã¨ÎÇ¥Ïö©, ÌïµÏã¨Ï£ºÏ†ú / ÌôïÏû•ÌïòÎäî ÏΩòÌÖêÏ∏† -->
     <main>
         <button id="test">111</button>
         <button id="call">call</button>
@@ -159,16 +159,16 @@ function fn_callTest(){
         <button onclick="fn_fetchPost()">fetch post</button>
         <button onclick="fn_api()">api</button>
     </main>
-    <!-- πÆº≠¿« µ∂∏≥¿˚¿Œ ±∏»π -->
+    <!-- Î¨∏ÏÑúÏùò ÎèÖÎ¶ΩÏ†ÅÏù∏ Íµ¨Ìöç -->
     <section>
-        <!-- πÆº≠, ∆‰¿Ã¡ˆ æ»ø° µ∂∏≥¿˚ ±∏»π-->
+        <!-- Î¨∏ÏÑú, ÌéòÏù¥ÏßÄ ÏïàÏóê ÎèÖÎ¶ΩÏ†Å Íµ¨Ìöç-->
         <article></article>
         <article></article>
     </section>
-    <!-- πÆº≠ø° ∞£¡¢¿˚ ∞¸∑√¿÷¥¬ ƒ¡≈Ÿ√˜µÈ -->
+    <!-- Î¨∏ÏÑúÏóê Í∞ÑÏ†ëÏ†Å Í¥ÄÎ†®ÏûàÎäî Ïª®ÌÖêÏ∏†Îì§ -->
     <aside>
     </aside>
-    <!-- ∞°¿Â æ∆∑°, ¿€º∫¿⁄, ¿˙¿€±« ¡§∫∏ µÓ-->
+    <!-- Í∞ÄÏû• ÏïÑÎûò, ÏûëÏÑ±Ïûê, Ï†ÄÏûëÍ∂å Ï†ïÎ≥¥ Îì±-->
     <footer>
     </footer>
 </body>

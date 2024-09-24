@@ -20,23 +20,23 @@ import com.base.app.main.service.MainService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 
-//@RestController ÀÌ°Å´Â boot¿¡¼­ htmlÀ» »ç¿ëÇØÁÖ´Â °ÍÀÌ´Ù.
-//ÇÏÁö¸¸ ºÎÆ®¿¡ jsp¸¦ ÆÄ½ÌÇÒ¶§´Â @Controller·Î ¹Ù²ãÁà¾ßÇÑ´Ù.@@
+//@RestController ì´ê±°ëŠ” bootì—ì„œ htmlì„ ì‚¬ìš©í•´ì£¼ëŠ” ê²ƒì´ë‹¤.
+//í•˜ì§€ë§Œ ë¶€íŠ¸ì— jspë¥¼ íŒŒì‹±í• ë•ŒëŠ” @Controllerë¡œ ë°”ê¿”ì¤˜ì•¼í•œë‹¤.@@
 @Controller
 public class MainController {
 
 	@Resource
-	private MainService MainService; // ¾ê¸¦ È£ÃâÇÏ¸é MainServiceImplÀÌ µş·Áµé¾î¿È
+	private MainService MainService; // ì–˜ë¥¼ í˜¸ì¶œí•˜ë©´ MainServiceImplì´ ë”¸ë ¤ë“¤ì–´ì˜´
 
 	@Autowired
-	MyUtil myUtil; // @Service·Î ±¸ÇöµÈ MyUtilÀ» ºÒ·¯¿Â°Í
+	MyUtil myUtil; // @Serviceë¡œ êµ¬í˜„ëœ MyUtilì„ ë¶ˆëŸ¬ì˜¨ê²ƒ
 	
 	@RequestMapping(value = "/")
 	public ModelAndView index() throws Exception {
 
 		ModelAndView mav = new ModelAndView();
 
-		mav.setViewName("index"); // jsp(html)·Î °¥¶§´Â setViewName // class·Î °¥¶§´Â setView
+		mav.setViewName("index"); // jsp(html)ë¡œ ê°ˆë•ŒëŠ” setViewName // classë¡œ ê°ˆë•ŒëŠ” setView
 
 		return mav;
 	}
@@ -66,12 +66,12 @@ public class MainController {
 	public ModelAndView api(@RequestBody HashMap<String, Object> map) throws Exception {
 
 		ModelAndView mav = new ModelAndView();
-		System.out.println("ÁøÀÔ" + map);
+		System.out.println("ì§„ì…" + map);
 		System.out.println(map.get("title"));
 
 		String relt = MainService.api(map);
 		//System.out.println("controller-->" + relt);
-		mav.setViewName("main/main"); // jsp(html)·Î °¥¶§´Â setViewName // class·Î °¥¶§´Â setView
+		mav.setViewName("main/main"); // jsp(html)ë¡œ ê°ˆë•ŒëŠ” setViewName // classë¡œ ê°ˆë•ŒëŠ” setView
 		mav.addObject("response", relt);
 
 		return mav;
@@ -82,7 +82,7 @@ public class MainController {
 
 		ModelAndView mav = new ModelAndView();
 
-		mav.setViewName("bbs/created"); // jsp(html)·Î °¥¶§´Â setViewName // class·Î °¥¶§´Â setView
+		mav.setViewName("bbs/created"); // jsp(html)ë¡œ ê°ˆë•ŒëŠ” setViewName // classë¡œ ê°ˆë•ŒëŠ” setView
 
 		return mav;
 	}
@@ -108,7 +108,7 @@ public class MainController {
 	@RequestMapping(value = "/list.action", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView list(MainDTO dto, HttpServletRequest request) throws Exception {
 
-		String pageNum = request.getParameter("pageNum");// ¹®ÀÚ¸¸ µû¿Â°Ç°¡?
+		String pageNum = request.getParameter("pageNum");// ë¬¸ìë§Œ ë”°ì˜¨ê±´ê°€?
 
 		int currentPage = 1;
 
@@ -142,7 +142,7 @@ public class MainController {
 
 		String param = "";
 
-		if (searchValue != null && !searchValue.equals("")) { // ³ÎÀ» Ã£¾Æ³»Áö ¸øÇÏ´Â°æ¿ì°¡ ÀÖ±â¶§¹®¿¡ ¾çÂÊ¿¡ ºÎÁ¤¹®À» ½áÁØ´Ù.
+		if (searchValue != null && !searchValue.equals("")) { // ë„ì„ ì°¾ì•„ë‚´ì§€ ëª»í•˜ëŠ”ê²½ìš°ê°€ ìˆê¸°ë•Œë¬¸ì— ì–‘ìª½ì— ë¶€ì •ë¬¸ì„ ì¨ì¤€ë‹¤.
 			param = "searchKey=" + searchKey;
 			param += "&searchValue=" + URLEncoder.encode(searchValue, "UTF-8");
 		}
@@ -169,7 +169,7 @@ public class MainController {
 		 * 
 		 * return "bbs/list";
 		 */
-		// ModelAndView·Î Àü¼Û
+		// ModelAndViewë¡œ ì „ì†¡
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("lists", lists);
@@ -204,19 +204,19 @@ public class MainController {
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("redirect:/list.action?pageNum=" + pageNum);
 			return mav;
-			// return "redirect:/list.action"; ¹İÈ¯°ªÀÌ String ÀÏ¶§ ÀÌ·¸°Ô ½áÁÖ°í ¸ğµ¨¿£ºä´Ï±ñ À§Ã³·³
+			// return "redirect:/list.action"; ë°˜í™˜ê°’ì´ String ì¼ë•Œ ì´ë ‡ê²Œ ì¨ì£¼ê³  ëª¨ë¸ì—”ë·°ë‹ˆê¹ ìœ„ì²˜ëŸ¼
 		}
 
 		int lineSu = dto.getContent().split("\n").length;
 
 		String param = "pageNum=" + pageNum;
-		if (searchValue != null && !searchValue.equals("")) { // °Ë»öÀ» Çß´Ù´Â¶æ
+		if (searchValue != null && !searchValue.equals("")) { // ê²€ìƒ‰ì„ í–ˆë‹¤ëŠ”ëœ»
 
 			param += "&searchKey=" + searchKey;
 			param += "&searchValue=" + URLEncoder.encode(searchValue, "UTF-8");
 		}
 
-		// ¸ğµ¨¿£ºä´Â StringÀ» ¹Ş¾Æ³»Áö ¸øÇÑ´Ù. ModelAndView mav = new ModelAndView();
+		// ëª¨ë¸ì—”ë·°ëŠ” Stringì„ ë°›ì•„ë‚´ì§€ ëª»í•œë‹¤. ModelAndView mav = new ModelAndView();
 
 		ModelAndView mav = new ModelAndView();
 
@@ -251,7 +251,7 @@ public class MainController {
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("redirect:/list.action?pageNum=" + pageNum);
 			return mav;
-			// return "redirect:/list.action"; ¹İÈ¯°ªÀÌ String ÀÏ¶§ ÀÌ·¸°Ô ½áÁÖ°í ¸ğµ¨¿£ºä´Ï±ñ À§Ã³·³
+			// return "redirect:/list.action"; ë°˜í™˜ê°’ì´ String ì¼ë•Œ ì´ë ‡ê²Œ ì¨ì£¼ê³  ëª¨ë¸ì—”ë·°ë‹ˆê¹ ìœ„ì²˜ëŸ¼
 		}
 
 		String param = "pageNum=" + pageNum;
@@ -270,7 +270,7 @@ public class MainController {
 		 * 
 		 * return "bbs/updated";
 		 */
-		// ¸ğµ¨¾Øºä Àü¼Û¹æ½Ä
+		// ëª¨ë¸ì•¤ë·° ì „ì†¡ë°©ì‹
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("dto", dto);
@@ -303,7 +303,7 @@ public class MainController {
 			param += "&searchKey=" + searchKey;
 			param += "&searchValue=" + URLEncoder.encode(searchValue, "UTF-8");
 		}
-		// ModelAndView´Â µ¥ÀÌÅÍ¶û °æ·Î°¡ °°ÀÌ ³Ñ¾î°¥¶§ »ç¿ë ¿©±ä µ¥ÀÌÅÍ°¡ ¾È³Ñ¾î°¡´Ï±ñ °æ·Î¸¸ ¹İÈ¯ÇØÁÖ¸é‰Î
+		// ModelAndViewëŠ” ë°ì´í„°ë‘ ê²½ë¡œê°€ ê°™ì´ ë„˜ì–´ê°ˆë•Œ ì‚¬ìš© ì—¬ê¸´ ë°ì´í„°ê°€ ì•ˆë„˜ì–´ê°€ë‹ˆê¹ ê²½ë¡œë§Œ ë°˜í™˜í•´ì£¼ë©´ëŒ
 		ModelAndView mav = new ModelAndView();
 
 		mav.setViewName("redirect:/list.action" + param);

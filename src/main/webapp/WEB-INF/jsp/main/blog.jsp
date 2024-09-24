@@ -7,14 +7,14 @@
 	Version: 1.1
 
 ========== -->
-<%@ page  contentType="text/html; charset=EUC-KR"%>
+<%@ page  contentType="text/html; charset=UTF-8"%>
 <%
 	String cp = request.getContextPath();
 %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="EUC-KR" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Play | Open source Project by UIdeck</title>

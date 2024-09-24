@@ -11,8 +11,8 @@ import lombok.RequiredArgsConstructor;
 
 /**
  * @Class Name  : ApiReceiveController.java
- * @Description : MIS ¼ö½Å¿ë
- * @author		: ±è¼ºÈ£
+ * @Description : MIS ìˆ˜ì‹ ìš©
+ * @author		: ê¹€ì„±í˜¸
  * @since		: 2024.05.27
  * @version		: 1.0
  * @see
@@ -20,9 +20,9 @@ import lombok.RequiredArgsConstructor;
  * <pre>
  * << Modification Information >>
  *
- *    ¼öÁ¤ÀÏ            ¼öÁ¤ÀÚ          ¼öÁ¤³»¿ë
+ *    ìˆ˜ì •ì¼            ìˆ˜ì •ì          ìˆ˜ì •ë‚´ìš©
  *  ----------  --------  ---------------------------
- *  2024.05.27   ±è¼ºÈ£          ÃÖÃÊ »ı¼º
+ *  2024.05.27   ê¹€ì„±í˜¸          ìµœì´ˆ ìƒì„±
  */
 @Controller
 @RequiredArgsConstructor
@@ -31,7 +31,7 @@ public class ApiReceiveController {
 	private final ApiReceiveService apiReceiveService;
 
 	/**
-	 * API ¿äÃ»ÀÌ µé¾î¿Ã °æ¿ì °á°ú°ª ¹İÈ¯
+	 * API ìš”ì²­ì´ ë“¤ì–´ì˜¬ ê²½ìš° ê²°ê³¼ê°’ ë°˜í™˜
 	 * @param HttpServletRequest param : parameter
 	 * @return String
 	 */
@@ -41,7 +41,7 @@ public class ApiReceiveController {
 		
 //		SetBackEndRequest tempRequest = new SetBackEndRequest(param);
 //		tempRequest.setParameter("SCH_API_TYPE", "USR");
-//		tempRequest.setParameter("SCH_USER_NAME", "±è°æ");
+//		tempRequest.setParameter("SCH_USER_NAME", "ê¹€ê²½");
 //		param = (HttpServletRequest)tempRequest;
 //		
 		String result = apiReceiveService.ReceiveApiJSON(param);
