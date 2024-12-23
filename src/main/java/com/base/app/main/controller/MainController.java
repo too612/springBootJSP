@@ -21,7 +21,7 @@ import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 
 //@RestController 이거는 boot에서 html을 사용해주는 것이다.
-//하지만 부트에 jsp를 파싱할때는 @Controller로 바꿔줘야한다.@@
+//하지만 부트에 jsp를 파싱할때는 @Controller로 바꿔줘야한다.
 @Controller
 public class MainController {
 
