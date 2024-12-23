@@ -20,11 +20,20 @@ configurations {
 
 repositories {
 	mavenCentral()
+	  // 추가
+    maven { url 'https://repo.spring.io/milestone' }
+}
+
+ext { 
+	// 추가
+    set('springAiVersion', "1.0.0-M2")
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+	//spring ai
+	implementation 'org.springframework.ai:spring-ai-ollama-spring-boot-starter'
 	
 	/***************** JSP *****************/ 
 	// JSTL
@@ -53,6 +62,13 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
+}
+
+// 추가
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.ai:spring-ai-bom:${springAiVersion}"
+    }
 }
 
 tasks.named('test') {
