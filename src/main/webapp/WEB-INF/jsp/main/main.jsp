@@ -116,7 +116,6 @@ function fn_callTest(){
                 userId: 1,
             }),
             })
-        .then((response) => response())
         .then((data) => console.log(data))
         .catch((error) => console.log("error:", error));
     }

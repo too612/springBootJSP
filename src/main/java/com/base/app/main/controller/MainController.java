@@ -52,6 +52,7 @@ public class MainController {
 
 		return "main/main";
 	}
+
 	@RequestMapping(value = "/about.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView about(HttpServletRequest request) throws Exception {
 
@@ -70,7 +71,7 @@ public class MainController {
 		System.out.println(map.get("title"));
 
 		String relt = MainService.api(map);
-		//System.out.println("controller-->" + relt);
+		System.out.println("controller-->" + relt);
 		mav.setViewName("main/main"); // jsp(html)로 갈때는 setViewName // class로 갈때는 setView
 		mav.addObject("response", relt);
 

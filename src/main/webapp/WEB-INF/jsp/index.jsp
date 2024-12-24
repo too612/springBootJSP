@@ -25,6 +25,7 @@
 <a href="<%=cp %>/board.action">포털</a>
 <a href="<%=cp %>/main.do">메인</a>
 <a href="<%=cp %>/test.do">test</a>
+<a href="<%=cp %>/form.do">form</a>
 </h3>
 
 </body>
